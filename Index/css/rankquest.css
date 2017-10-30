@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  background-color: #f7f7f7;
 }
 
 #wrapper {
@@ -108,13 +109,13 @@ body {
 
 @media screen and (min-width: 768px) {
     #adv-search {
-        width: 500px;
+        width: 405px;
         margin: 0 auto;
     }
     .dropdown.dropdown-lg {
         position: static !important;
     }
     .dropdown.dropdown-lg .dropdown-menu {
-        min-width: 500px;
+        min-width: 405px;
     }
 }
