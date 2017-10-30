@@ -119,3 +119,14 @@ body {
         min-width: 405px;
     }
 }
+
+@media screen and (min-width: 768px) {
+  .cursos img{
+    height: 180px;
+    width: 180px;
+  }
+}
+
+.img-responsive {
+  margin:0 auto;
+}
