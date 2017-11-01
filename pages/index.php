@@ -18,8 +18,8 @@
 <body>
     <!-- Page Wrapper -->
     <div id="wrapper">
-     <!-- Sidebar -->
-     <ul class="sidebar-nav">
+       <!-- Sidebar -->
+       <ul class="sidebar-nav">
         <li class="sidebar-brand">
             <a class="logotip" href="#">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -27,13 +27,19 @@
             </a>
         </li>
         <li>
-            <a href="#">Questionários</a>
+            <a href="index.php">Home</a>
         </li>
         <li>
-            <a href="#">Vagas</a>
+            <a href="quiz.php">Quiz</a>
         </li>
         <li>
-            <a href="#">Minha Conta</a>
+            <a href="ranking.php">Ranking</a>
+        </li>
+        <li>
+            <a href="vagas.php">Vagas</a>
+        </li>
+        <li>
+            <a href="conta.php">Minha Conta</a>
         </li>
     </ul>
     <!-- End Sidebar -->
@@ -101,60 +107,25 @@
             <div class="cursos">
                 <div class="row">
                     <div class="col-md-2 col-sm-4 mb-4">
-                        <div class="hoverOne">
-                            <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                            <h5 id="title5and6">Java</h5>
-                            <h6 id="title5and6">Introdução</h6>
-                            <div class="overlay">
-                                <div id="textOverlay"><button type="button" class="btn btn-info">Click Me!</button></div>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
                     </div>
                     <div class="col-md-2 col-sm-4 mb-4">
-                        <div class="hoverOne">
-                            <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                            <h5 id="title5and6">Java</h5>
-                            <h6 id="title5and6">Introdução</h6>
-                            <div class="overlay">
-                                <div id="textOverlay"><button type="button" class="btn btn-info">Click Me!</button></div>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
                     </div>
                     <div class="col-md-2 col-sm-4 mb-4">
-                        <div class="hoverOne">
-                            <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                            <h5 id="title5and6">Java</h5>
-                            <h6 id="title5and6">Introdução</h6>
-                            <div class="overlay">
-                                <div id="textOverlay"><button type="button" class="btn btn-info">Click Me!</button></div>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
                     </div>
                     <div class="col-md-2 col-sm-4 mb-4">
-                        <div class="hoverOne">
-                            <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                            <h5 id="title5and6">Java</h5>
-                            <h6 id="title5and6">Introdução</h6>
-                            <div class="overlay">
-                                <div id="textOverlay"><button type="button" class="btn btn-info">Click Me!</button></div>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
                     </div>
                     <div class="col-md-2 col-sm-4 mb-4">
-                        <div class="hoverOne">
-                            <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                            <h5 id="title5and6">Java</h5>
-                            <h6 id="title5and6">Introdução</h6>
-                            <div class="overlay">
-                                <div id="textOverlay"><button type="button" class="btn btn-info">Click Me!</button></div>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
 
 </div>
 
