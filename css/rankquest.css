@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 body {
   overflow-x: hidden;
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -66,6 +68,10 @@ p.small {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.page-title h2{
+  font-family: 'Montserrat';
 }
 
 /* Sidebar Styles */
@@ -231,4 +237,3 @@ footer .footer-below {
   background-color: #233140;
 }
 
-/* Login Style */
