@@ -1,7 +1,7 @@
 <?php
 include 'menu.php'
 ?>
-<div id="page-content-wrapper">
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-10">
@@ -54,6 +54,9 @@ include 'menu.php'
 						</button>
 					</div>
 				</div>
-				<!-- Fim da barra de procura -->
+			</div>
+		</div>
+	</div>
+
 			</body>
 			</html>

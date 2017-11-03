@@ -1,11 +1,12 @@
 <?php
 	include 'menu.php'
-?>
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
+?> 
+
+
+ <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10 page-title">
-                    <h2>Minha Conta</h1>
+                    <h2>Minha Conta</h2>
                     <hr>
                 </div>
             </div>
@@ -64,10 +65,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
-</div>
 
 
 </body>  

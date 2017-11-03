@@ -1,7 +1,8 @@
 <?php
 	include 'menu.php'
 ?>
-    <div id="page-content-wrapper">
+
+  
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10">
@@ -53,39 +54,14 @@
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                         </div>
-                    </div>
-                    <!-- Fim da barra de procura -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10">
-                    <hr>
-                </div>
-            </div>
-            <div class="cursos">
-                <div class="row">
-                    <div class="col-md-2 col-sm-4 mb-4">
-                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                    </div>
-                    <div class="col-md-2 col-sm-4 mb-4">
-                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                    </div>
-                    <div class="col-md-2 col-sm-4 mb-4">
-                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                    </div>
-                    <div class="col-md-2 col-sm-4 mb-4">
-                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                    </div>
-                    <div class="col-md-2 col-sm-4 mb-4">
-                        <img class="img-responsive" src="https://image.ibb.co/dmwuGR/Rank_Quest_Image.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
     
 
-</div>
+</body>
 
 
 </body>  
