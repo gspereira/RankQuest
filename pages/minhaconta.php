@@ -19,16 +19,26 @@
                                 <input type="text" class="form-control" id="inputName" placeholder="Nome" value="" readonly>
                             </div>
                             <div class="form-group">
+                                <label for="inputCpf">CPF</label>
+                                <input type="text" class="form-control" id="inputCpf" onBlur="ValidarCPF(form1.cpf);" 
+                                onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" value="">
+                            </div>
+                            <div class="form-group">
+                                    <label for="inputPhone">Telefone/Celular</label>
+                                    <input type="number" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
+                                    maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
+                            </div>
+                            <div class="form-group">
                                 <label for="inputAtuacao">Área de Atuação</label>
                                 <select name="atuacao" id="inputAtuacao" class="form-control">
                                     <option selected>
                                             Área de Atuação
                                     </option>
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail">Email</label>
-                                <input type="text" class="form-control" id="inputEmail" placeholder="E-mail" value="">
                             </div>
                                 <button type="submit" class="btn btn-default">Salvar Mudanças</button>
                                 <hr>
@@ -66,7 +76,7 @@
             </div>
         </div>
     
-
+<script language="JavaScript" type="text/javascript" src="../js.validateMask.js"></script>
 
 
 
