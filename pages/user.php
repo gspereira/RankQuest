@@ -5,7 +5,7 @@
   
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-10 col-md-8">
                     <!-- Barra de procura -->
                     <div class="input-group">
                         <input type="text" class="form-control">
@@ -59,6 +59,7 @@
      </div>
  </div>
 
+</div>
     
 
 </body>

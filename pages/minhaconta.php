@@ -12,7 +12,7 @@
             </div>
             <div class="user-data">
                 <div class="row">
-                    <div class="col-lg-5">
+              <div class="col-lg-5">
                         <form>
                             <div class="form-group">
                                 <label for="inputName">Nome</label>
@@ -53,7 +53,7 @@
                                 <button type="submit" class="btn btn-default">Alterar Senha</button>
                         </form>
                     </div>
-                    <div class="col-lg-5">
+                   <div class="col-lg-5">
                         <form>
                             <div class="form-group">
                                 <label for="adcComp">Adicionar Competência</label>

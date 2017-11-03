@@ -19,9 +19,9 @@
 </head>
 
 <body>
-  <!-- Page Wrapper -->
+ 
 
-     <!-- Sidebar -->
+
      <ul class="sidebar-nav">
     <li class="sidebar-brand">
       <a class="logotip" href="#">
