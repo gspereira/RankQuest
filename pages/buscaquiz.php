@@ -2,8 +2,6 @@
 include 'menu.php'
 ?>
 
-<<<<<<< HEAD:pages/buscaquiz.php
-  
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10 col-md-8">
