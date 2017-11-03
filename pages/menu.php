@@ -28,18 +28,24 @@
         <i class="fa fa-question-circle" aria-hidden="true"></i>
         RankQuest
       </a>
+    </li> 
+    <li>
+      <a href="dashboard.php">Home</a>
     </li>
      <li>
-      <a href="minhaconta.php">Minha Conta</a>
-    </li>
-    <li>
-      <a href="user.php">Quiz</a>
+      <a href="buscaquiz.php">Buscar Quiz</a>
     </li>
     <li>
       <a href="ranking.php">Ranking</a>
     </li>
     <li>
       <a href="vagas.php">Vagas</a>
+    </li>
+    <li>
+      <a href="cadastraquiz.php">Cadastrar Quiz</a>
+    </li>
+    <li>
+      <a href="minhaconta.php">Minha Conta</a>
     </li>
    
   </ul>
