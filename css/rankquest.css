@@ -171,6 +171,10 @@ header .nome {
   font-weight: 700;
   font-size: 2em;
 }
+header .logo-inicial{
+  max-height: 300px;
+  max-width: 100%;
+}
 .nome h1, span {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
