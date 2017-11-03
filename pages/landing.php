@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="nome">
-                            <img src="../img/profile.png" alt="">
+                            <img class="img-responsive logo-inicial" src="../img/RQ1W.png" alt="">
                             <h1>RankQuest</h1>
                             <span>Pratique seus estudos e saia na frente!</span>
                             <br>
