@@ -94,12 +94,12 @@ p.small {
 .sidebar-nav li .logotip {
   display: block;
   text-decoration: none;
-  color: #ffffff;
+  padding-top: 5px;
 }
 
 .sidebar-nav li .logotip:hover {
   text-decoration: none;
-  color: #00ff46;
+  filter: sepia() saturate(10000%) hue-rotate(70deg);
 }
 
 /* Search Bar Styles */

@@ -25,8 +25,7 @@
      <ul class="sidebar-nav">
     <li class="sidebar-brand">
       <a class="logotip" href="#">
-        <i class="fa fa-question-circle" aria-hidden="true"></i>
-        RankQuest
+        <img src="../img/sblgw.png" alt="" class="img-responsive">
       </a>
     </li> 
     <li>
