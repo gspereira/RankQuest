@@ -1,90 +1,218 @@
-<!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>RankQuest</title>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!--  meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="../css/rankquest.css" rel="stylesheet">
+  <link rel="stylesheet" href="../addons/fa/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+     <script src='../js/jquery-3.2.1.min.js'></script>
+  	<script src='../js/ajaxrq.js'></script>
+  	<script src='../js/rankquest.js'></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-	<link href="../css/rankquest.css" rel="stylesheet">
-	<link rel="stylesheet" href="../addons/fa/css/font-awesome.min.css">
+<!--LINKS PARA A TAB-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 </head>
 <body>
-	<div class="container">
-		<form class="form-horizontal">
-			<fieldset>
 
-				<!-- Form Name -->
-				<legend>Cadastro de Usuário</legend>
+	<div class="container-fluid">
+	
 
-				<!-- Text input-->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="nome">Nome:</label>  
-					<div class="col-md-4">
-						<input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
 
-					</div>
-				</div>
 
-				<!-- Text input-->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="email">E-mail:</label>  
-					<div class="col-md-4">
-						<input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
 
-					</div>
-				</div>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#tab_aluno">Cadastro de alunos</a></li>
+    <li><a data-toggle="tab" href="#tab_professor">Cadastro de professores</a></li>
+    <li><a data-toggle="tab" href="#tab_empresa">Cadastro de empresas</a></li>
+   
+  </ul>
 
-				<!-- Select Basic -->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="sexo">Sexo:</label>
-					<div class="col-md-4">
-						<select id="sexo" name="sexo" class="form-control">
-							<option value="Não informado">Não informado</option>
-							<option value="Masculino">Masculino</option>
-							<option value="Feminino">Feminino</option>
-						</select>
-					</div>
-				</div>
 
-				<!-- Select Basic -->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="user">Você é:</label>
-					<div class="col-md-4">
-						<select id="user" name="user" class="form-control">
-							<option value="Não informado">Não informado</option>
-							<option value="Aluno">Aluno</option>
-							<option value="Empresa">Empresa</option>
-						</select>
-					</div>
-				</div>
-				<!-- Password input-->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="senha">Senha:</label>
-					<div class="col-md-4">
-						<input id="senha" name="senha" type="password" placeholder="" class="form-control input-md">
 
-					</div>
-				</div>
 
-				<!-- Button -->
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="cadastrar"></label>
-					<div class="col-md-4">
-						<button id="cadastrar" name="cadastrar" class="btn btn-primary">Cadastrar</button>
-					</div>
-				</div>
 
-			</fieldset>
-		</form>
+
+<div class="tab-content">
+<div id="tab_aluno" class="tab-pane fade in active">
+
+		<div class="row">
+			<div class="col-lg-10 page-title">
+				<h2>Cadastro de alunos</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="user-data">
+			<div class="row">
+				<div class="col-lg-5">
+
+					<form id='aluno'>
+
+						<div class="form-group">
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
+							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" >
+							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" >
+							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
+							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
+							<input name='tipo' type="hidden" class="form-control" id="tipo" value="A" >
+							<input name='funcao' type="hidden" class="form-control" id="tipo" value="cadastro_usuario" >
+<hr>
+						<button id="cadastrar_aluno" class="btn btn-default">Cadastrar</button>
+
+
+						
+							
+						</div>
+					</form>
+				</div> 
+			</div>
+		</div>
+
+
 	</div>
+
+
+
+<div id="tab_professor" class="tab-pane fade">
+
+		<div class="row">
+			<div class="col-lg-10 page-title">
+				<h2>Cadastro de professores</h2>
+				<hr>
+			</div>
+		</div>
+
+		<div class="user-data">
+			<div class="row">
+				<div class="col-lg-5">
+
+					<form  id='professor'>
+
+						<div class="form-group">
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
+							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" >
+							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" >
+							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
+							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
+							<input name='tipo' type="hidden" class="form-control" id="tipo" value="P" >
+							<input name='funcao' type="hidden" class="form-control" id="tipo" value="cadastro_usuario" >
+<hr>
+						<button id="cadastrar_professor" class="btn btn-default">Cadastrar</button>
+
+
+					
+						</div>
+					</form>
+				</div> 
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+<div id="tab_empresa" class="tab-pane fade">
+
+		<div class="row">
+			<div class="col-lg-10 page-title">
+				<h2>Cadastro de empresas</h2>
+				<hr>
+			</div>
+		</div>
+
+		<div class="user-data">
+			<div class="row">
+				<div class="col-lg-5">
+
+					<form id='empresa'>
+
+						<div class="form-group">
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
+							<input name='cnpj' type="text" class="form-control" id="cnpj" placeholder="cnpj" >
+							<input name='responsavel' type="text" class="form-control" id="responsavel" placeholder="Responsável">
+							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
+							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
+							<input name='tipo' type="hidden" class="form-control" id="tipo" value="E" >
+							<input name='funcao' type="hidden" class="form-control" id="tipo" value="cadastro_usuario" >
+<hr>
+						<button id="cadastrar_empresa" class="btn btn-default">Cadastrar</button>
+
+
+						</div>
+					</form>
+				</div> 
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div id="resultado">
+							
+
+
+						</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>    
 
 </body>
 </html>

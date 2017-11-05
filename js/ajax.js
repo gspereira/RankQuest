@@ -133,7 +133,7 @@ $(document).ready(function(){
 	$('#cadastrar_usuario').click(function(){
 		
 	var dados = $('form').serialize();
-	
+	alert(dados);
 		$.ajax({
 			url:'processa_cadastros.php',
 			type:'POST',
