@@ -4,7 +4,7 @@ include('conecta.php');
 
 if(isset($_POST['funcao']) && $_POST['funcao'] == 'cadastro_usuario'){
 
-echo 'TESTE';
+
 
 $sql = $mysqli->prepare('INSERT INTO usuario(nome,email,telefone,celular,login,senha,tipo)
   VALUES(?,?,?,?,?,?,?)');
