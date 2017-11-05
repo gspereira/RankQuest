@@ -2,7 +2,7 @@
 <head>
   <title>RankQuest</title>
 
-  <!--  meta tags -->
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -65,13 +65,13 @@
 					<form id='aluno'>
 
 						<div class="form-group">
-							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
-							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" >
-							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" >
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" required>
+							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" required>
+							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" required>
 							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
-							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" required>
 							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
-							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" required>
 							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
 							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
 							<input name='tipo' type="hidden" class="form-control" id="tipo" value="A" >
@@ -109,13 +109,13 @@
 					<form  id='professor'>
 
 						<div class="form-group">
-							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
-							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" >
-							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" >
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" required>
+							<input name='cpf' type="text" class="form-control" id="cpf" placeholder="Cpf" required>
+							<input name='dt_nascimento' type="text" class="form-control" id="dt_nascimento" placeholder="Data de nascimento" onfocus="(this.type='date')" required>
 							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
-							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" required>
 							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
-							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" required>
 							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
 							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
 							<input name='tipo' type="hidden" class="form-control" id="tipo" value="P" >
@@ -152,13 +152,13 @@
 					<form id='empresa'>
 
 						<div class="form-group">
-							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" >
-							<input name='cnpj' type="text" class="form-control" id="cnpj" placeholder="cnpj" >
+							<input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" required>
+							<input name='cnpj' type="text" class="form-control" id="cnpj" placeholder="cnpj" required>
 							<input name='responsavel' type="text" class="form-control" id="responsavel" placeholder="Responsável">
 							<input name='telefone' type="text" class="form-control" id="telefone" placeholder="Telefone (opcional)">
-							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" >
+							<input name='celular' type="text" class="form-control" id="celular" placeholder="Celular" required>
 							<input name='email' type="email" class="form-control" id="email" placeholder="Email">
-							<input name='login' type="text" class="form-control" id="login" placeholder="Login" >
+							<input name='login' type="text" class="form-control" id="login" placeholder="Login" required>
 							<input name='senha' type="password" class="form-control" id="senha" placeholder="Senha">
 							<input name='conf_senha' type="password" class="form-control" id="conf_senha" placeholder="Confirma senha">
 							<input name='tipo' type="hidden" class="form-control" id="tipo" value="E" >
