@@ -1,5 +1,18 @@
 <?php
 include "menu.php";
+include  "../processa/conecta.php";
+	$sql1 = $mysqli->prepare('select id,descricao from categoria');
+	$sql1->execute();
+	$sql1->bind_result($id,$descricao);	
+	$sql1->store_result();
+
+
+	$sql2 = $mysqli->prepare('select id,descricao from dificuldade');
+	$sql2->execute();
+	$sql2->bind_result($id,$descricao);	
+	$sql2->store_result();
+
+
 ?>
    
 
@@ -25,73 +38,91 @@ include "menu.php";
 
   			<h2>Cadastrar Perguntas</h2>
 		    <div class="col-lg-10">
-				<div class="form-group">
+				<div id="combo_perguntas" class="form-group">
 					
-		            <select  id='combo_categorias' type='text' name='combo_categorias'>
-		            	<option value="">Selecione a categoria </option>
+		            <select  id='combo_categorias' type='text' name='combo_categorias' required>
+
+		            	<option value=''>Selecione uma categoria </option>
+		            	<?php 	while ($sql1->fetch()){
+											echo	"<option value='$id'>$descricao </option>" ;
+										}	
+								?>	
 		           </select>
 
 
-				 	<select  id='combo_assunto' type='text' name='combo_assunto'>
+				 	<select  id='combo_assunto' type='text' name='combo_assunto' required>
 		           		<option value="">Selecione o assunto </option>
 		           </select>
 
-		           <select  id='combo_assunto' type='text' name='combo_assunto'>
-		           		<option value="">Selecione a dificuldade </option>
+		           <select  id='combo_dificuldade' type='text' name='combo_dificuldade' required>
+		           	<option value="">Selecione a dificuldade </option>
+		           			<?php 	while ($sql2->fetch()){
+											echo	"<option value='$id'>$descricao </option>" ;
+										}	
+								?>	
 		           </select>
 
 
 		    </div>
 
 
+			
+
 		        </div>
 
-		         <div class="form-group col-lg-5">
+		         <div class="form-group col-lg-6">
 
 		        <label for="title">Enunciado:</label>
-		        <input name='enunciado' id='enunciado' type="text" class="form-control">
+		        <textarea rows='3' name='enunciado' id='enunciado' type="text" class="form-control" required></textarea>
 		        <label for="title">Alternativas:</label><br>
 		        <label for="title">Lembre-se de indicar a alternativa correta:</label><br>
 
 
-		        <input name='ind_correta' type='radio' value='1'>
-		 		<input name='a1' id='a1' type="text" class="form-control">
-		 		<input name='ind_correta' type='radio' value='2'>
-		        <input name='a2' id='a2' type="text" class="form-control">
-		        <input name='ind_correta' type='radio' value='3'>
-		        <input name='a3' id='a3' type="text" class="form-control">
-		        <input name='ind_correta' type='radio' value='4'>
-		        <input name='a4' id='a4' type="text" class="form-control">
-		        <input name='ind_correta' type='radio' value='5'>
-		        <input name='a5' id='a5' type="text" class="form-control">
+		        <input name='ind_correta' type='radio' value='a1' required>
+		 		<input name='a1' id='a1' type="text" class="form-control" placeholder="Alternativa A" required>
+		 		<input name='ind_correta' type='radio' value='a2' required>
+		        <input name='a2' id='a2' type="text" class="form-control" placeholder="Alternativa B" required>
+		        <input name='ind_correta' type='radio' value='a3' required>
+		        <input name='a3' id='a3' type="text" class="form-control" placeholder="Alternativa C" required>
+		        <input name='ind_correta' type='radio' value='a4' required>
+		        <input name='a4' id='a4' type="text" class="form-control" placeholder="Alternativa D" required>
+		        <input name='ind_correta' type='radio' value='a5' required>
+		        <input name='a5' id='a5' type="text" class="form-control" placeholder="Alternativa E" required>
+ 				 <input name='funcao' type="hidden" class="form-control" id="tipo" value="cadastro_pergunta" required>
+ 				  <input name='autor_id' type="hidden" class="form-control" id="tipo" value="<?php echo $_SESSION['id'];?>" required>
 
 
 
 			
 		    </div>
 		      <button id="cadastrar_pergunta" class="btn btn-primary">Cadastrar Pergunta</button>
-
+			<div class='form-group col-lg-4' id="resultado"></div>
 	</form>
 	</div>
+
+
+
+
+	<!--   QUIZZZZ   -->
 
 		<div class="tab-pane fade " id="cadastro_quiz" role="tabpanel" aria-labelledby="tab_quiz">
 		  	<form id='form-quiz'>
 
 			    <h2>Cadastrar Quiz</h2>
-			    <div class="col-lg-10">
+			    <div class="col-lg-6">
 					<div class="form-group">
 						
-			            <select  id='combo_categorias' type='text' name='combo_categorias'>
+			            <select  id='combo_categofdrias' type='text' name='combo_categorias'>
 			            	<option value="">Selecione a categoria </option>
 			           </select>
-					 	<select  id='combo_assunto' type='text' name='combo_assunto'>
+					 	<select  id='combo_assufdnto' type='text' name='combo_assunto'>
 			           		<option value="">Selecione o assunto </option>
 			           </select>
 			        </div>
 			    </div>
 
 
-			    <div class="form-group">
+			    <div class="form-group col-lg-6">
 
 			        <label for="title">Título do Quiz:</label>
 			        <input name='titulo' id='titulo' type="text" class="form-control">
@@ -118,8 +149,8 @@ include "menu.php";
 			                            <hr>
 			                            <div class="form-group row">
 			                            
-			                                <div class="col-sm-10">
-			                                    <select class="custom-select" id="Categoria">
+			                                <div class="col-sm-6">
+			                                    <select class="custom-select" >
 			                                        <option selected>Categoria</option>
 			                                        <option></option>
 			                                    </select>
@@ -127,8 +158,8 @@ include "menu.php";
 			                            </div>
 			                            <div class="form-group row">
 			                        
-			                                <div class="col-sm-10">
-			                                    <select class="custom-select" name='filtro_assunto' id="filtro_assunto">
+			                                <div class="col-sm-4">
+			                                    <select class="custom-select" name='filtro_assunto' ">
 			                                        <option selected>Assunto</option>
 			                                        <option></option>
 			                                    </select>
@@ -136,8 +167,8 @@ include "menu.php";
 			                            </div>
 			                            <div class="form-group row">
 			                        
-			                                <div class="col-sm-10">
-			                                    <select class="custom-select" name='filtro_dificuldade' id="filtro_dificuldade">
+			                                <div class="col-sm-6">
+			                                    <select class="custom-select" name='filtro_dificuldade'">
 			                                        <option selected>Dificuldade</option>
 			                                        <option></option>
 			                                    </select>

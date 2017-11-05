@@ -70,4 +70,69 @@ $(document).ready(function(){
   		});
 	});
 
+
+
+
+    $('#cadastrar_pergunta').click(function(){
+        $('form#form_pergunta').off();
+        $('form#form_pergunta').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#form_pergunta').serialize();
+            
+            $.ajax({
+                url:'../processa/processa_cadastros.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+                $('#resultado').empty().html(data);
+
+                }
+            });
+        });
+    });
+
+
+
+
+
+    $('#cadastrar_quiz').click(function(){
+        $('form#form_quiz').off();
+        $('form#form-quiz').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#form-quiz').serialize();
+            $.ajax({
+                url:'../processa/processa_cadastros.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+                $('#resultado').empty().html(data);
+
+                }
+            });
+        });
+    });
+
+
+
+    $('#combo_categorias').mouseup(function(){
+        
+        var categoria = $('#combo_categorias').serialize();
+
+        $.ajax({
+            url:'../processa/processa_combo.php',
+            type:'POST',
+            dataType:'html',
+            data: categoria,
+            success: function(data){
+          
+                $('#combo_assunto').empty().html(data);
+            }   
+        });
+    });
+
+
+
+
 });
