@@ -116,7 +116,7 @@ $(document).ready(function(){
 
 
 
-    $('#combo_categorias').mouseup(function(){
+    $('#combo_categorias').click(function(){
         
         var categoria = $('#combo_categorias').serialize();
 
@@ -128,6 +128,39 @@ $(document).ready(function(){
             success: function(data){
           
                 $('#combo_assunto').empty().html(data);
+            }   
+        });
+    });
+
+
+     $('#combo_categorias2').click(function(){
+        
+        var categoria = $('#combo_categorias2').serialize();
+
+        $.ajax({
+            url:'../processa/processa_combo.php',
+            type:'POST',
+            dataType:'html',
+            data: categoria,
+            success: function(data){
+          
+                $('#combo_assunto2').empty().html(data);
+            }   
+        });
+    });
+
+ $('#combo_categorias3').click(function(){
+        
+        var categoria = $('#combo_categorias3').serialize();
+
+        $.ajax({
+            url:'../processa/processa_combo.php',
+            type:'POST',
+            dataType:'html',
+            data: categoria,
+            success: function(data){
+          
+                $('#combo_assunto3').empty().html(data);
             }   
         });
     });

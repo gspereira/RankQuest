@@ -6,12 +6,28 @@ include  "../processa/conecta.php";
 	$sql1->bind_result($id,$descricao);	
 	$sql1->store_result();
 
-
-	$sql2 = $mysqli->prepare('select id,descricao from dificuldade');
+	$sql2 = $mysqli->prepare('select id,descricao from categoria');
 	$sql2->execute();
 	$sql2->bind_result($id,$descricao);	
 	$sql2->store_result();
 
+
+	$sql3 = $mysqli->prepare('select id,descricao from categoria');
+	$sql3->execute();
+	$sql3->bind_result($id,$descricao);	
+	$sql3->store_result();
+
+
+
+	$sql4 = $mysqli->prepare('select id,descricao from dificuldade');
+	$sql4->execute();
+	$sql4->bind_result($id,$descricao);	
+	$sql4->store_result();
+
+	$sql5 = $mysqli->prepare('select id,descricao from dificuldade');
+	$sql5->execute();
+	$sql5->bind_result($id,$descricao);	
+	$sql5->store_result();
 
 ?>
    
@@ -43,7 +59,7 @@ include  "../processa/conecta.php";
 		            <select  id='combo_categorias' type='text' name='combo_categorias' required>
 
 		            	<option value=''>Selecione uma categoria </option>
-		            	<?php 	while ($sql1->fetch()){
+		            	<?php	while ($sql1->fetch()){
 											echo	"<option value='$id'>$descricao </option>" ;
 										}	
 								?>	
@@ -56,7 +72,7 @@ include  "../processa/conecta.php";
 
 		           <select  id='combo_dificuldade' type='text' name='combo_dificuldade' required>
 		           	<option value="">Selecione a dificuldade </option>
-		           			<?php 	while ($sql2->fetch()){
+		           			<?php	while ($sql4->fetch()){
 											echo	"<option value='$id'>$descricao </option>" ;
 										}	
 								?>	
@@ -112,10 +128,14 @@ include  "../processa/conecta.php";
 			    <div class="col-lg-6">
 					<div class="form-group">
 						
-			            <select  id='combo_categofdrias' type='text' name='combo_categorias'>
-			            	<option value="">Selecione a categoria </option>
+			            <select  id='combo_categorias2' type='text' name='combo_categorias'>
+			            	<option selected>Selecione uma categoria</option>
+			            	<?php    while ($sql2->fetch()){
+											echo	"<option value='$id'>$descricao </option>" ;
+										}	
+								?>
 			           </select>
-					 	<select  id='combo_assufdnto' type='text' name='combo_assunto'>
+					 	<select  id='combo_assunto2' type='text' name='combo_assunto'>
 			           		<option value="">Selecione o assunto </option>
 			           </select>
 			        </div>
@@ -134,59 +154,94 @@ include  "../processa/conecta.php";
 
 
 		 <!-- BARRA DE FILTRO   -->
-			<div class="row">
-			        <div class="col-lg-10">
-			            <!-- Barra de procura -->
-			            <div class="input-group">
-			                <input type="text" class="form-control">
-			                <div class="dropdown dropdown-lg">
-			                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			                        <i class="fa fa-filter"></i>
-			                    </button>
-			                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-			                       
-			                            <label for="filter">Filtros</label>
-			                            <hr>
-			                            <div class="form-group row">
-			                            
-			                                <div class="col-sm-6">
-			                                    <select class="custom-select" >
-			                                        <option selected>Categoria</option>
-			                                        <option></option>
-			                                    </select>
-			                                </div>
-			                            </div>
-			                            <div class="form-group row">
-			                        
-			                                <div class="col-sm-4">
-			                                    <select class="custom-select" name='filtro_assunto' ">
-			                                        <option selected>Assunto</option>
-			                                        <option></option>
-			                                    </select>
-			                                </div>
-			                            </div>
-			                            <div class="form-group row">
-			                        
-			                                <div class="col-sm-6">
-			                                    <select class="custom-select" name='filtro_dificuldade'">
-			                                        <option selected>Dificuldade</option>
-			                                        <option></option>
-			                                    </select>
-			                                </div>
-			                            </div>
-			                            <hr>
-			                            <button type="submit" class="btn btn-primary pull-right">Aplicar</button>
-			                        
-			                    </div>
-			                </div>
-			                <div class="input-group-btn">
-			                    <button type="button" class="btn btn-secondary">
-			                        <i class="fa fa-search" aria-hidden="true"></i>
-			                    </button>
-			                </div>
-			            </div>
-			        </div>
-			    </div>
+			 <div class="row">
+                <div class="col-lg-10 col-md-8">
+                    <!-- Barra de procura -->
+                    <div class="input-group">
+
+                        <input type="text" class="form-control">
+
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filtros">
+                                <i class="fa fa-filter"></i>
+                           </button>
+                        </div>   
+
+                        <button type="button" id='pesquisar' name='pesquisar' class="btn btn-secondary">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                 </button>
+                             </div> 
+
+
+                    <div class="modal fade" id="filtros" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel">Filtros</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						      
+							
+							   <div >
+                                        <label for="searchCurso" class="col-sm-4 col-form-label">Categoria</label>
+                                        <div class="col-sm-10">
+                                            <select class="custom-select" id="combo_categorias3" name='combo_categorias'>
+                                                <option selected>Selecione uma categoria</option>
+                                                <?php	while ($sql3->fetch()){
+											echo	"<option value='$id'>$descricao </option>" ;
+										}	
+								?>
+                                            </select>
+                                        </div>
+                                  
+                             
+                                        <label for="searchAssunto" class="col-sm-4 col-form-label">Assunto</label>
+                                        <div class="col-sm-10">
+                                            <select name='combo_assunto' class="custom-select" id="combo_assunto3">
+                                                <option selected>Selecione um assunto</option>
+                                                <option></option>
+                                            </select>
+                                        </div>
+                                   
+                                   
+                                        <label for="searchNivel" class="col-sm-4 col-form-label">Dificuldade</label>
+                                        <div class="col-sm-10">
+                                            <select class="custom-select" id="combo_dificuldade" name='combo_dificuldade'>
+
+                                            	 <option selected>Selecione uma dificuldade</option>
+                                                <?php 	while ($sql5->fetch()){
+											echo	"<option value='$id'>$descricao </option>" ;
+										}	
+								?>	
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-primary" data-dismiss="modal">Aplicar</button>
+						       
+						      </div>
+						    </div>
+						  </div>
+					</div>
+
+
+
+
+
+
+
+
+
+                    </div>
+             </div>
 			    <!-- BARRA DE FILTRO   -->
 
 
