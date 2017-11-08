@@ -30,18 +30,19 @@ if(!isset($_SESSION['login'])){//não está logado
 	<link rel="stylesheet" href="../addons/fa/css/font-awesome.min.css">
 
 	<style>
-			#myProgress {
-  width: 100%;
-  background-color: #ddd;
-  margin-left: 10px;
-}
+	#myProgress {
+		width: 100%;
+		background-color: #ddd;
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
 
-#myBar {
-  
-  height: 18px;
-  background-color: #4CAF50;
-}
- </style>   
+	#myBar {
+
+		height: 18px;
+		background-color: #4CAF50;
+	}
+</style>   
 </head>
 
 <body>
@@ -54,121 +55,121 @@ if(!isset($_SESSION['login'])){//não está logado
 			</a>
 		</li>
 
-	<div id="wrapper">
-		<!-- Sidebar -->
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav" style="margin-left:0;">
-				<li> <a href='dashboard.php' style="text-align: center;margin-left: -30px; color: white; font-size: 25px;">RankQuest</a>	</li>
-				
-		<h6 style='color:white;margin:20px;'>Bem vindo <?php echo $_SESSION['login']?></h6>
-	</li>
-		<li style='width:200px'><?php echo  "<h6 style='color:white;margin-left:55px;'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</h6><div   id='myProgress'><div style='width:$_SESSION[pont_bar]%' id='myBar'></div></div>";?>
-			
+		<div id="wrapper">
+			<!-- Sidebar -->
+			<div id="sidebar-wrapper">
+				<ul class="sidebar-nav" style="margin-left:0;">
+					<li> <a href='dashboard.php' style="text-align: center;margin-left: -30px; color: white; font-size: 25px;">RankQuest</a>	</li>
+
+					<h6 style='color:white;margin:20px;'>Bem vindo <?php echo $_SESSION['login']?></h6>
+				</li>
+				<li style='width:200px'><?php echo  "<h6 style='color:white;text-align:center'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</h6><div   id='myProgress'><div style='width:$_SESSION[pont_bar]%' id='myBar'></div></div>";?>
+
+
+				</li>
+
+
+
+				<?php
+
+				if($_SESSION['tipo'] == 'A'){
+
+					echo'
+					<li>
+					<a href="buscaquiz.php">Buscar Quiz</a>
+					</li>
+					<li>
+					<a href="ranking.php">Ranking</a>
+					</li>
+					<li>
+					<a href="vagas.php">Vagas</a>
+					</li>
+					<li>
+					<a href="minhaconta.php">Minha Conta</a>
+					</li>
+					<li>
+					<a href="../processa/processa_logout.php">Sair</a>
+					</li>';
+				}
+
+				elseif($_SESSION['tipo'] == 'P'){
+
+					echo'
+					<li>
+					<a href="buscaquiz.php">Buscar Quiz</a>
+					</li>
+					<li>
+					<a href="ranking.php">Ranking</a>
+					</li>
+					<li>
+					<a href="vagas.php">Vagas</a>
+					</li>
+					<li>
+					<a href="cadastraquiz.php">Cadastrar Quiz</a>
+					</li>
+					<li>
+					<a href="minhaconta.php">Minha Conta</a>
+					</li>
+					<li>
+					<a href="../processa/processa_logout.php">Sair</a>
+					</li> ';
+				}
+
+
+
+				elseif($_SESSION['tipo'] == 'E'){
+
+					echo'
+					<li>
+					<a href="ranking.php">Ranking</a>
+					</li>
+					<li>
+					<a href="cadastrovaga.php">Cadastrar Vaga</a>
+					</li>
+					<li>
+					<a href="minhaconta.php">Minha Conta</a>
+					</li>
+					<li>
+					<a href="../processa/processa_logout.php">Sair</a>
+					</li> ';
+				}
+
+
+
+
+				elseif($_SESSION['tipo'] == 'S'){
+
+					echo'
+
+					<li>
+					<a href="buscaquiz.php">Buscar Quiz</a>
+					</li>
+					<li>
+					<a href="ranking.php">Ranking</a>
+					</li>
+					<li>
+					<a href="vagas.php">Vagas</a>
+					</li>
+					<li>
+					<a href="cadastraquiz.php">Cadastrar Quiz</a>
+					</li>
+					<li>
+					<a href="cadastrovaga.php">Cadastrar vaga</a>
+					</li>
+					<li>
+					<a href="minhaconta.php">Minha Conta</a>
+					</li>
+					<li>
+					<a href="../processa/processa_logout.php">Sair</a>
+					</li> ';
+				}
+
+
+				?>
+			</ul>
+
 
 		</li>
-
-
-
-		<?php
-
-		if($_SESSION['tipo'] == 'A'){
-
-			echo'
-			<li>
-			<a href="buscaquiz.php">Buscar Quiz</a>
-			</li>
-			<li>
-			<a href="ranking.php">Ranking</a>
-			</li>
-			<li>
-			<a href="vagas.php">Vagas</a>
-			</li>
-			<li>
-			<a href="minhaconta.php">Minha Conta</a>
-			</li>
-			<li>
-			<a href="../processa/processa_logout.php">Sair</a>
-			</li>';
-		}
-
-		elseif($_SESSION['tipo'] == 'P'){
-
-			echo'
-			<li>
-			<a href="buscaquiz.php">Buscar Quiz</a>
-			</li>
-			<li>
-			<a href="ranking.php">Ranking</a>
-			</li>
-			<li>
-			<a href="vagas.php">Vagas</a>
-			</li>
-			<li>
-			<a href="cadastraquiz.php">Cadastrar Quiz</a>
-			</li>
-			<li>
-			<a href="minhaconta.php">Minha Conta</a>
-			</li>
-			<li>
-			<a href="../processa/processa_logout.php">Sair</a>
-			</li> ';
-		}
-
-
-
-		elseif($_SESSION['tipo'] == 'E'){
-
-			echo'
-			<li>
-			<a href="ranking.php">Ranking</a>
-			</li>
-			<li>
-			<a href="cadastrovaga.php">Cadastrar Vaga</a>
-			</li>
-			<li>
-			<a href="minhaconta.php">Minha Conta</a>
-			</li>
-			<li>
-			<a href="../processa/processa_logout.php">Sair</a>
-			</li> ';
-		}
-
-
-
-
-		elseif($_SESSION['tipo'] == 'S'){
-
-			echo'
-			
-			<li>
-			<a href="buscaquiz.php">Buscar Quiz</a>
-			</li>
-			<li>
-			<a href="ranking.php">Ranking</a>
-			</li>
-			<li>
-			<a href="vagas.php">Vagas</a>
-			</li>
-			<li>
-			<a href="cadastraquiz.php">Cadastrar Quiz</a>
-			</li>
-			<li>
-			<a href="cadastrovaga.php">Cadastrar vaga</a>
-			</li>
-			<li>
-			<a href="minhaconta.php">Minha Conta</a>
-			</li>
-			<li>
-			<a href="../processa/processa_logout.php">Sair</a>
-			</li> ';
-		}
-
-
-		?>
 	</ul>
-
-
-</li>
-</ul>
 </div>
 </div>
