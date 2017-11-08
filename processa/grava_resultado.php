@@ -16,7 +16,7 @@ $array_perguntas = $_SESSION['array_perguntas'];
 		$resposta = $_POST['resposta'];
 		$_SESSION['array_respostas'][$_SESSION['contador']] = $resposta;
 
-	}elseif($_SESSION['array_respostas'][$_SESSION['contador']] == null){
+	}else{
 
 		$_SESSION['array_respostas'][$_SESSION['contador']] = '0';
 
@@ -24,11 +24,13 @@ $array_perguntas = $_SESSION['array_perguntas'];
 
 	}
 
-for($i=0;$i < count($_SESSION['array_perguntas']);$i++){
+for($i=1;$i <= count($_SESSION['array_perguntas']);$i++){
 
 
- echo 'DEU';
-
+   if(!isset($_SESSION['array_respostas'][$i])){
+        
+        $_SESSION['array_respostas'][$i] = '0';
+        }
 
     
 
@@ -40,46 +42,42 @@ for($i=0;$i < count($_SESSION['array_perguntas']);$i++){
     $sql->close();
     
     
-    if($_SESSION['array_respostas'][$i] == null){
-        
-        $_SESSION['array_respostas'][$i] = '0';
-        }
+ 
 
 
 
-         
-        
-       if($_SESSION['array_perguntas'][$i]['alternativa'][$_SESSION['array_respostas'][$i]]['ind_correta'] == 'S'){
-           
-        
-            
-            
-            $acertos++;         
-            switch ($dificuldade) {
-                case 'Basico':
-            $pontuacao = $pontuacao + '20';
-            break;
-            case 'Intermediario':
-    
-            $pontuacao = $pontuacao + '35';
-            break;
-            case 'Avancado':
-    
-            $pontuacao = $pontuacao + '50';
-            break;
+        if(isset($_SESSION['array_perguntas'][$i]['alternativa'][$_SESSION['array_respostas'][$i]]['ind_correta'])){
 
-            }
-            
-        }
-        else $erros ++;
+
+			if($_SESSION['array_perguntas'][$i]['alternativa'][$_SESSION['array_respostas'][$i]]['ind_correta'] == 'S'){
+			           
+			      
+			           
+			            $acertos++;         
+			            switch ($dificuldade) {
+			                case 'Basico':
+			            $pontuacao = $pontuacao + '20';
+			            break;
+			            case 'Intermediario':
+			    
+			            $pontuacao = $pontuacao + '35';
+			            break;
+			            case 'Avancado':
+			    
+			            $pontuacao = $pontuacao + '50';
+			            break;
+
+			            }
+
+ 			}else $erros ++;
+
+
+
+ 		}else $erros ++;
 
 }
 
-
-
-
-
-
+        
      $xp = $_SESSION['xp']+ $pontuacao;
       $_SESSION['xp'] = $xp;
     $_SESSION['pont_bar'] = intval(($_SESSION['xp'] /$_SESSION['pont_max']) * 100 );
@@ -117,26 +115,20 @@ for($i=0;$i < count($_SESSION['array_perguntas']);$i++){
     
         
     }
-    
-    
-        
-        
-        
-    
-    
-
+       
 echo "
-    <div class='modal fade' id='myModal' role='dialog'>
+
+	<div class='modal fade' id='myModal' role='dialog'>
     <div class='modal-dialog'>
       <!-- Modal content-->
-      
+	  
       <div class='modal-content'>
         <div class='modal-header'>
           <h4 class='modal-title'>Modal Header</h4>
         </div>
         <div class='modal-body'>
           <p>Você acertou $acertos questões e errou $erros.</p>
-          <p>Total: $pontuacao pontos.</p>
+		  <p>Total: $pontuacao pontos.</p>
         </div>
         <div class='modal-footer'>
           <input style='width:100px' id='close' type='button'  class='btn btn-default' name='close' value='Concluir'>
@@ -145,6 +137,7 @@ echo "
       
     </div>
   </div>";
+
 
 
 

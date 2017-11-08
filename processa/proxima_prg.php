@@ -20,21 +20,20 @@ $array_perguntas = $_SESSION['array_perguntas'];
 	}
 
 
-var_dump($_SESSION['array_respostas']);
 
 
 	$_SESSION['contador']++;
 
 
 	
-	if(($_SESSION['contador'] <0) || ($_SESSION['contador'] >= count($_SESSION['array_perguntas']))){
+	if(($_SESSION['contador'] < 1) || ($_SESSION['contador'] > count($_SESSION['array_perguntas']))){
 		
 		$_SESSION['contador']--;
 		
 	}
 	 
 	
-	if(count($_SESSION['array_respostas']) > $_SESSION['contador']){
+	if(count($_SESSION['array_respostas']) >= $_SESSION['contador']){
   $alternativa_select = $_SESSION['array_respostas'][$_SESSION['contador']];
 
 	switch ($alternativa_select) {
@@ -62,21 +61,23 @@ var_dump($_SESSION['array_respostas']);
 
 
         $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
-        $numero = $_SESSION['contador'] + 1;
+        $numero = $_SESSION['contador'] ;
             echo " <h4>$_SESSION[titulo]</h4>
                     <form>
                     <h5>$numero)$enunciado</h5>";
   
 
-   for($j='0';$j<count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){
-   			$alt = $j+1;
+   for($j='1';$j <= count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){
+          $alt = $j;
             $alternativa = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['descricao'];
              $ind_correta = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['ind_correta'];
 
 
              echo "
                  <input id='$alt'   name='resposta' type='radio' value='$alt'></input>
-                    <input readonly class='form-control' name='a$j' type='text' value='$alternativa'></input>";  }
+                    <input readonly class='form-control' name='a$j' type='text' value='$alternativa'></input>";
+        }
+
 echo"
 
 

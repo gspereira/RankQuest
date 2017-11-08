@@ -206,9 +206,11 @@ $(document).ready(function(){
             dataType:'html',
             data: dados,
             success: function(data){
-                $('#resultado').empty().html(data);
-                $('#modal').empty().html(data);
-                $('#myModal').modal('show');
+      
+                $('#Mymodal').empty().html(data);
+                
+                
+                
             }   
         });
     }});
