@@ -223,3 +223,8 @@ footer .footer-below {
   background-color: #233140;
 }
 
+/* Quiz Css */
+.quiz-group{
+  padding-top: 5px;
+  width: 100%;
+}

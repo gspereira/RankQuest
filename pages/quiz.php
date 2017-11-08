@@ -62,7 +62,7 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 <div class="container-fluid">
   <div class="row">
     <form>
-      <div id='resultado'  class="col-lg-12 col-sm-10 col-xs-1">
+      <div id='resultado'  class="col-lg-10 col-sm-8 col-xs-1">
 
        <?php     
 
@@ -70,7 +70,6 @@ $_SESSION['array_perguntas'] = $array_perguntas;
        $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
        $numero = $_SESSION['contador'] ;
        echo " 
-       <form>
        <h5>$numero)$enunciado</h5>";
 
 
@@ -81,8 +80,12 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 
 
         echo "
-        <input id='$alt'   name='resposta' type='radio' value='$alt'></input>
-        <input readonly class='form-control' name='a$j' type='text' value='$alternativa'></input>";
+        <div class='input-group quiz-group'>
+        <span class='input-group-addon'>
+        <input type='radio' '$alt' name='resposta' value='$alt'>
+        </span>
+        <textarea readonly class='form-control' name='a$j'>$alternativa</textarea>
+        </div>";
       }
 
 
