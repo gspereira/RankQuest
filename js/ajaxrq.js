@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
         
     $('#cadastrar_aluno').click(function(){
         $('form#aluno').off();
