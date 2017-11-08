@@ -25,7 +25,7 @@ if(!isset($_SESSION['login'])){//não está logado
 	<script src='../js/rankquest.js'></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+<link href="../css/style.css" rel="stylesheet">
 	<link href="../css/rankquest.css" rel="stylesheet">
 	<link rel="stylesheet" href="../addons/fa/css/font-awesome.min.css">
 
@@ -47,7 +47,6 @@ if(!isset($_SESSION['login'])){//não está logado
 <body>
 
 
-
 	<ul class="sidebar-nav">
 		<li class="sidebar-brand">
 			<a class="logotip" href="#">
@@ -55,9 +54,13 @@ if(!isset($_SESSION['login'])){//não está logado
 			</a>
 		</li>
 
-
-	<li>
-		<h6 style='color:white;'>Bem vindo <?php echo $_SESSION['login']?></h6>
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav" style="margin-left:0;">
+				<li style="text-align: center; color: white; font-size: 25px;">RankQuest</li>
+				
+		<h6 style='color:white;margin:25px;'>Bem vindo <?php echo $_SESSION['login']?></h6>
 	</li>
 		<li style='width:200px'><?php echo  "<h6 style='color:white;margin-left:55px;'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</h6><div   id='myProgress'><div style='width:$_SESSION[pont_bar]%' id='myBar'></div></div>";?>
 			
@@ -173,3 +176,7 @@ if(!isset($_SESSION['login'])){//não está logado
 	</ul>
 
 
+</li>
+</ul>
+</div>
+</div>
