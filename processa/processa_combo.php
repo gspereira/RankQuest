@@ -2,7 +2,7 @@
 include ('conecta.php');
 
 
-echo 'DEU';
+
 
 //Carrega combo categorias
 

@@ -222,21 +222,40 @@ $(document).ready(function(){
     
     });
 
-   $('#filtrar_quiz').click(function(){
-        $('form#form_quiz').off();
-        $('form#form-quiz').submit(function(e){
+
+
+   $(document).on("click","#aplicar_filtro",function(){
+
+         $('form#filtros').off();
+        $('form#filtros').submit(function(e){
             e.preventDefault();
-            var dados = $('form#form-quiz').serialize();
+            var dados = $('form#filtros').serialize();
             $.ajax({
                 url:'../processa/processa_filtros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
                 success: function(data){
-                $('#div-quiz').empty().html(data);
-
+                    alert('sucesso');
+                $('#resultado').empty().html(data);
+                    
                 }
             });
+        });
+    });
+  $('#combo_categorias').click(function(){
+        
+        var categoria = $('#combo_categorias').serialize();
+
+        $.ajax({
+            url:'../processa/processa_combo.php',
+            type:'POST',
+            dataType:'html',
+            data: categoria,
+            success: function(data){
+          
+                $('#combo_assunto').empty().html(data);
+            }   
         });
     });
 
