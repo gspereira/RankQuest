@@ -9,24 +9,34 @@ session_start();
     $sql->store_result();
     $sql->fetch();
     if(($sql->num_rows()) > 0){
+
+$status = 'A';
+$sql = $mysqli->prepare('SELECT a.xp,a.level,u.id,u.tipo from aluno as a ,usuario as u where u.login = ? and u.senha = ? and ind_status = ? ');
+    $sql->bind_param('sss',$_POST['login'],$_POST['senha'],$status);
+    $sql->execute();
+    $sql->bind_result($xp,$level,$id,$tipo);
+    $sql->store_result();
+    $sql->fetch();
+    if(($sql->num_rows()) > 0){
         
-        $_SESSION['id'] = $id;
+         $_SESSION['id'] = $id;
         $_SESSION['login'] = $login;
         $_SESSION['tipo'] = $tipo;
+        $_SESSION['xp'] = $xp;
+        $_SESSION['level'] = $level;
+        $_SESSION['pont_max'] = (($_SESSION['level'] * 1.5) * 150);
+        $_SESSION['pont_bar'] = intval(($_SESSION['xp'] /$_SESSION['pont_max']) * 100 );
 
-		if($tipo == 'A'){
-
-			$sql = $mysqli->prepare('SELECT level,xp from aluno where usuario_id= ?');
-		    $sql->bind_param('s',$id);
-		    $sql->execute();
-		    $sql->bind_result($level,$xp);
-		    $sql->store_result();
-		    $sql->fetch();
-			$_SESSION['level'] = $level;
-		    $_SESSION['xp'] = $xp;
-		}
-    
-   		echo '<script>top.location.href="dashboard.php";</script>';
+        echo '<script>top.location.href="../pages/dashboard.php";</script>';
+        
     }
-    else echo "<h5>Dados Invalidos</h5>";
+    else{echo "<h2>Dados Invalidos</h2>";       
+    }
+    
+
+
+       } 
+       
+
+		
 ?>

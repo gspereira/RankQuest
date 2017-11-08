@@ -1,4 +1,5 @@
-$(document).ready(function(){
+
+    }$(document).ready(function(){
 	
 	
 	//CARREGA COMBO BOX CATEGORIAS - CADASTRO.PHP

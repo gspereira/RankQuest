@@ -1,164 +1,105 @@
+
 <?php
-include "menu.php"; 
+include "menu.php";
+include "../processa/conecta.php"; 
+    $_SESSION['quest_id'] = $_GET['id'];
+    $quest_id = $_SESSION['quest_id'];
+    $_SESSION['titulo'] = $_GET['titulo'];
+    $_SESSION['contador'] = '0';
+
+
+
+    $sql = $mysqli->prepare('select p.id,p.enunciado from pergunta as p ,pergunta_questionario as pq where pq.questionario_id= ? and pq.pergunta_id = p.id ');
+    $sql->bind_param('i',$quest_id);
+    $sql->execute();
+    $sql->bind_result($pergunta_id,$enunciado);
+    $sql->store_result();
+    $contador= '0';
+
+
+    while($sql->fetch()){
+
+
+
+        $sql1 = $mysqli->prepare('select id,descricao,ind_correta from alternativa where pergunta_id = ? ');
+        $sql1->bind_param('i',$pergunta_id);
+        $sql1->execute();
+        $sql1->bind_result($alternativa_id,$descricao,$ind_correta);
+        $sql1->store_result();
+
+
+            $array_perguntas[$contador] = array(
+
+            'id' => $pergunta_id,
+            'enunciado' => $enunciado);
+
+        while($sql1->fetch()){
+
+
+        $array_perguntas[$contador]['alternativa'][] = array(
+            'id' => $alternativa_id,
+            'descricao' => $descricao,
+            'ind_correta' => $ind_correta);
+   
+                
+         }
+
+
+     $contador++;
+
+    
+    }
+   
+    $_SESSION['array_perguntas'] = $array_perguntas;
+ 
 
 ?>
 
+
+
+
 <div class="container-fluid">
+<div class="row">
+    <form>
+    <div id='resultado'  class="col-lg-12 col-sm-10 col-xs-1">
+     
+   <?php     
 
-	<h1>Final Quiz for Lip building</h1>
 
-	<form action="grade.php" method="post" id="quiz">
+        $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
+        $numero = $_SESSION['contador'] + 1;
+            echo " <h4>$_SESSION[titulo]</h4>
+                    <form>
+                    <h5>$numero)$enunciado</h5>";
+  
 
-		<ol>
+   for($j='0';$j<count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){
+          $alt = $j+1;
+            $alternativa = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['descricao'];
+             $ind_correta = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['ind_correta'];
 
-			<li>
 
-				<h3>CSS Stands for...</h3>
+             echo "
+                 <input id='$alt'   name='resposta' type='radio' value='$alt'></input>
+                    <input readonly class='form-control' name='a$j' type='text' value='$alternativa'></input>";
+        }
 
-				<div>
-					<input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-					<label for="question-1-answers-A">A) Computer Styled Sections </label>
-				</div>
 
-				<div>
-					<input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-					<label for="question-1-answers-B">B) Cascading Style Sheets</label>
-				</div>
 
-				<div>
-					<input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-					<label for="question-1-answers-C">C) Crazy Solid Shapes</label>
-				</div>
 
-				<div>
-					<input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-					<label for="question-1-answers-D">D) None of the above</label>
-				</div>
 
-			</li>
+?>
+<input  style='width:100px' id='anterior' type='button'  class='btn btn-success btn-block' name='anterior' value='Anterior'>
+      <input style='width:100px' id='proxima' type='button'  class='btn btn-success btn-block' name='proxima' value='Proxima'>
+       <input style='width:100px' id='finalizar' type='button'  class='btn btn-success btn-block' name='finalizar' value='Finalizar'>
 
-			<li>
-
-				<h3>Internet Explorer 6 was released in...</h3>
-
-				<div>
-					<input type="radio" name="question-2-answers" id="question-2-answers-A" value="A" />
-					<label for="question-2-answers-A">A) 2001</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-2-answers" id="question-2-answers-B" value="B" />
-					<label for="question-2-answers-B">B) 1998</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-2-answers" id="question-2-answers-C" value="C" />
-					<label for="question-2-answers-C">C) 2006</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-2-answers" id="question-2-answers-D" value="D" />
-					<label for="question-2-answers-D">D) 2003</label>
-				</div>
-
-			</li>
-
-			<li>
-
-				<h3>SEO Stand for...</h3>
-
-				<div>
-					<input type="radio" name="question-3-answers" id="question-3-answers-A" value="A" />
-					<label for="question-3-answers-A">A) Secret Enterprise Organizations</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-3-answers" id="question-3-answers-B" value="B" />
-					<label for="question-3-answers-B">B) Special Endowment Opportunity</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-3-answers" id="question-3-answers-C" value="C" />
-					<label for="question-3-answers-C">C) Search Engine Optimization</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-3-answers" id="question-3-answers-D" value="D" />
-					<label for="question-3-answers-D">D) Seals End Olives</label>
-				</div>
-
-			</li>
-
-			<li>
-
-				<h3>A 404 Error...</h3>
-
-				<div>
-					<input type="radio" name="question-4-answers" id="question-4-answers-A" value="A" />
-					<label for="question-4-answers-A">A) is an HTTP Status Code meaning Page Not Found</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
-					<label for="question-4-answers-B">B) is a good excuse for a clever design</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-4-answers" id="question-4-answers-C" value="C" />
-					<label for="question-4-answers-C">C) should be monitored for in web analytics</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-4-answers" id="question-4-answers-D" value="D" />
-					<label for="question-4-answers-D">D) All of the above</label>
-				</div>
-
-			</li>
-
-			<li>
-
-				<h3>Your favorite website is</h3>
-
-				<div>
-					<input type="radio" name="question-5-answers" id="question-5-answers-A" value="A" />
-					<label for="question-5-answers-A">A) CSS-Tricks</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-5-answers" id="question-5-answers-B" value="B" />
-					<label for="question-5-answers-B">B) CSS-Tricks</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-5-answers" id="question-5-answers-C" value="C" />
-					<label for="question-5-answers-C">C) CSS-Tricks</label>
-				</div>
-
-				<div>
-					<input type="radio" name="question-5-answers" id="question-5-answers-D" value="D" />
-					<label for="question-5-answers-D">D) CSS-Tricks</label>
-				</div>
-
-			</li>
-
-		</ol>
-
-		<input type="submit" value="Submit Quiz" />
-
-	</form>
-
+    </div>
+</form>
 </div>
-
-<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-	var pageTracker = _gat._getTracker("UA-68528-29");
-	pageTracker._initData();
-	pageTracker._trackPageview();
-</script>
-
+</div>
 </body>
 
 </html>
+    
+
+

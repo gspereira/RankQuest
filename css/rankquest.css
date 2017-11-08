@@ -7,6 +7,14 @@ body {
 }
 
 
+#div-quiz{
+
+height: 200px;
+margin-top: 70px;
+
+
+}
+
 .form-group input{
 
 margin: 10px;
@@ -29,8 +37,7 @@ p.small {
 }
 
 .container-fluid {
-  width: 100%;
-  position: absolute;
+  width: 85%;
   margin-left:250px ;
   padding: 15px
 

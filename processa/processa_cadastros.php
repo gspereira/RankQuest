@@ -154,8 +154,13 @@ if(isset($_POST['funcao']) && $_POST['funcao'] == 'cadastro_pergunta'){
 		$sql->close();
 	}
 
+
 		}
-}
+
+
+
+
+
 
 
 

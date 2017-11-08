@@ -166,6 +166,54 @@ $(document).ready(function(){
     });
 
 
+ $(document).on("click","#anterior",function(){
+    var dados = $('form').serialize();
+        $.ajax({
+            url:'../processa/anterior_prg.php',
+            type:'POST',
+            dataType:'html',
+            data: dados,
+            success: function(data){
+                
+                $('#resultado').empty().html(data);
+            }   
+        });
+    });
+    
+     $(document).on("click","#proxima",function(){
+        
+        var dados = $('form').serialize();
+        $.ajax({
+            url:'../processa/proxima_prg.php',
+            type:'POST',
+            dataType:'html',
+            data: dados,
+            success: function(data){
+                
+                $('#resultado').empty().html(data);
+            }   
+        });
+    });
+    
+    
+    $(document).on("click","#finalizar",function(){
+          var confirmacao = confirm("Tem certeza que deseja finalizar?");
+          if (confirmacao == true){
+        var dados = $('form').serialize();
+        $.ajax({
+            url:'../processa/grava_resultado.php',
+            type:'POST',
+            dataType:'html',
+            data: dados,
+            success: function(data){
+                $('#resultado').empty().html(data);
+                $('#modal').empty().html(data);
+                $('#myModal').modal('show');
+            }   
+        });
+    }});
+
+
 
 
 });
