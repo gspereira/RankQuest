@@ -149,7 +149,7 @@ echo "
 
     unset($_SESSION['titulo_quiz'],$_SESSION['sql_perguntas'],$_SESSION['perguntas_array'],$_SESSION['contador'],$_SESSION['array_respostas']);
 
-    unset($_SESSION['titulo_quiz'],$_SESSION['sql_perguntas'],$_SESSION['array_perguntas'],$_SESSION['contador'],$_SESSION['array_respostas']),$_SESSION['quest_id'],$_SESSION['titulo'];
+    unset($_SESSION['titulo_quiz'],$_SESSION['sql_perguntas'],$_SESSION['array_perguntas'],$_SESSION['contador'],$_SESSION['array_respostas'],$_SESSION['quest_id'],$_SESSION['titulo']);
 
 
 
