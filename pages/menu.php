@@ -28,6 +28,20 @@ if(!isset($_SESSION['login'])){//não está logado
 
 	<link href="../css/rankquest.css" rel="stylesheet">
 	<link rel="stylesheet" href="../addons/fa/css/font-awesome.min.css">
+
+	<style>
+			#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  margin-left: 10px;
+}
+
+#myBar {
+  
+  height: 18px;
+  background-color: #4CAF50;
+}
+ </style>   
 </head>
 
 <body>
@@ -39,6 +53,15 @@ if(!isset($_SESSION['login'])){//não está logado
 			<a class="logotip" href="#">
 				<img src="../img/sblgw.png" alt="" class="img-responsive">
 			</a>
+		</li>
+
+
+	<li>
+		<h6 style='color:white;'>Bem vindo <?php echo $_SESSION['login']?></h6>
+	</li>
+		<li style='width:200px'><?php echo  "<h6 style='color:white;margin-left:55px;'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</h6><div   id='myProgress'><div style='width:$_SESSION[pont_bar]%' id='myBar'></div></div>";?>
+			
+
 		</li>
 
 

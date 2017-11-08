@@ -51,24 +51,25 @@ for($i=1;$i <= count($_SESSION['array_perguntas']);$i++){
 
 			if($_SESSION['array_perguntas'][$i]['alternativa'][$_SESSION['array_respostas'][$i]]['ind_correta'] == 'S'){
 			           
-			      
+			      echo $dificuldade;
 			           
 			            $acertos++;         
 			            switch ($dificuldade) {
-			                case 'Basico':
+			                case 'Iniciante':
 			            $pontuacao = $pontuacao + '20';
 			            break;
-			            case 'Intermediario':
+			            case 'Intermediário':
 			    
 			            $pontuacao = $pontuacao + '35';
 			            break;
-			            case 'Avancado':
+			            case 'Experiente':
 			    
 			            $pontuacao = $pontuacao + '50';
 			            break;
 
 			            }
 
+			
  			}else $erros ++;
 
 
@@ -116,19 +117,23 @@ for($i=1;$i <= count($_SESSION['array_perguntas']);$i++){
         
     }
        
-echo "
+  
+  
 
-	<div class='modal fade' id='myModal' role='dialog'>
+echo "
+<input id='btnTrigger' type='hidden' data-toggle='modal' data-target='#myModal'>
+
+  <div class='modal fade' id='myModal' role='dialog' aria-labelledby='exampleModalLabel'aria-hidden='true'>
     <div class='modal-dialog'>
       <!-- Modal content-->
-	  
+    
       <div class='modal-content'>
         <div class='modal-header'>
           <h4 class='modal-title'>Modal Header</h4>
         </div>
         <div class='modal-body'>
           <p>Você acertou $acertos questões e errou $erros.</p>
-		  <p>Total: $pontuacao pontos.</p>
+      <p>Total: $pontuacao pontos.</p>
         </div>
         <div class='modal-footer'>
           <input style='width:100px' id='close' type='button'  class='btn btn-default' name='close' value='Concluir'>
@@ -137,7 +142,6 @@ echo "
       
     </div>
   </div>";
-
 
 
 

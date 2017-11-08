@@ -206,14 +206,21 @@ $(document).ready(function(){
             dataType:'html',
             data: dados,
             success: function(data){
-      
-                $('#Mymodal').empty().html(data);
-                
+
+
+        $('#modal').empty().html(data);
+        $('#btnTrigger').click();
                 
                 
             }   
         });
     }});
+
+    $(document).on("click","#close",function(){
+        
+        top.location.href="../pages/buscaquiz.php"
+    
+    });
 
 
 

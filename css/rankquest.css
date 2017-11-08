@@ -105,6 +105,7 @@ p.small {
 }
 
 .sidebar-nav li .logotip {
+  margin-left: -170px;
   display: block;
   text-decoration: none;
   padding-top: 5px;
