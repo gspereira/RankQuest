@@ -222,6 +222,25 @@ $(document).ready(function(){
     
     });
 
+   $('#filtrar_quiz').click(function(){
+        $('form#form_quiz').off();
+        $('form#form-quiz').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#form-quiz').serialize();
+            $.ajax({
+                url:'../processa/processa_filtros.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+                $('#div-quiz').empty().html(data);
+
+                }
+            });
+        });
+    });
+
+
 
 
 

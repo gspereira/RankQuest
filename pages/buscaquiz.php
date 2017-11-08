@@ -14,13 +14,13 @@
                 <div class="col-lg-12 col-sm-10 col-xs-1">
                     <!-- Barra de procura -->
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <input name='filtro' type="text" class="form-control">
                         <div class="dropdown dropdown-lg">
                             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-filter"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                <form class="form-horizontal" role="form">
+                                <form id='filtros' class="form-horizontal" role="form">
                                     <label for="filter">Filtros</label>
                                     <hr>
                                     <div class="form-group row">
@@ -73,12 +73,13 @@
     echo "
    
         <div id='div-quiz' class='col-lg-3 col-xs-12 col-sm-5'>
-        <div style='height:200px;'> 
+        <div style='height:150px;'> 
             <h4>$titulo
             <h5>$descricao</h5>
-            <h6>$categoria/$assunto</h6>
+            <h6>$categoria/$assunto - $dificuldade</h6>
+     </div>
+
          <h6>Autor: $autor</h6>
-        </div>
 
             <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Iniciar</a>
             </div>
