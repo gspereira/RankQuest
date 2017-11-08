@@ -61,7 +61,7 @@ if(!isset($_SESSION['login'])){//não está logado
 				<ul class="sidebar-nav" style="margin-left:0;">
 					<li> <a href='dashboard.php' style="text-align: center;margin-left: -30px; color: white; font-size: 25px;">RankQuest</a>	</li>
 
-					<h6 style='color:white;margin:20px;'>Bem vindo <?php echo $_SESSION['login']?></h6>
+					<h6 style='color:white;margin:20px; text-align: center;'>Bem vindo <?php echo $_SESSION['login']?></h6>
 				</li>
 				<li style='width:200px'><?php echo  "<h6 style='color:white;text-align:center'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</h6><div   id='myProgress'><div style='width:$_SESSION[pont_bar]%' id='myBar'></div></div>";?>
 
