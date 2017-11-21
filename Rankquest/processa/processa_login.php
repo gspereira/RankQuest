@@ -27,7 +27,7 @@ $sql = $mysqli->prepare('SELECT a.xp,a.level,u.id,u.tipo from aluno as a ,usuari
         $_SESSION['pont_max'] = (($_SESSION['level'] * 1.5) * 150);
         $_SESSION['pont_bar'] = intval(($_SESSION['xp'] /$_SESSION['pont_max']) * 100 );
 
-        echo '<script>top.location.href="../dashboard.php";</script>';
+        echo '<script>top.location.href="../pages/dashboard.php";</script>';
         
     }
     else{echo "<h2>Dados Invalidos</h2>";       

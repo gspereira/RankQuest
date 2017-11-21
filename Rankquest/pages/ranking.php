@@ -1,7 +1,7 @@
 <?php
 include 'menu.php';
 include '../processa/conecta.php';
-    $sql1 = $mysqli->prepare('SELECT u.id,u.nome,a.level,sum(r.pontuacao)as pontuacao from aluno as a , resultado as r,usuario as u where a.usuario_id = r.aluno_id and a.usuario_id = u.id GROUP by u.nome order by r.pontuacao asc');
+    $sql1 = $mysqli->prepare('SELECT u.id,u.nome,a.level,sum(r.pontuacao)as pontuacao from aluno as a , resultado as r,usuario as u where a.usuario_id = r.aluno_id and a.usuario_id = u.id GROUP by u.nome order by r.pontuacao DESC');
     $sql1->execute();
     $sql1->bind_result($id,$nome,$level,$pontuacao); 
     $sql1->store_result();

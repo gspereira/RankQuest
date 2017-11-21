@@ -218,7 +218,7 @@ $(document).ready(function(){
 
     $(document).on("click","#close",function(){
         
-        top.location.href="../dashboard.php"
+        top.location.href="../pages/buscaquiz.php"
     
     });
 

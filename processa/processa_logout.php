@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-echo '<script>top.location.href="../pages/landing.php";</script>';
+echo '<script>top.location.href="../landing.php";</script>';
 ?>
