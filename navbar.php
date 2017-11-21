@@ -46,7 +46,20 @@ if(!isset($_SESSION['login'])){//não está logado
     <!-- Custom scripts for this page-->
     <!-- Toggle between fixed and static navbar-->
 
+  <style>
+  #myProgress {
+    width: 100%;
+    background-color: #ddd;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
 
+  #myBar {
+
+    height: 18px;
+    background-color: #4CAF50;
+  }
+</style>   
 
 </head>
 
@@ -54,11 +67,30 @@ if(!isset($_SESSION['login'])){//não está logado
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">RankQuest</a>
+
+
+
+
+
+<!-- BARRA DE PROGRESSO
+
+          <a style='color:white;margin:20px; text-align: center;'>Bem vindo <?php echo $_SESSION['login']?></a>
+        
+        <a style='width:200px'><?php echo  "<a style='color:white;text-align:center'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</a>
+        <div   id='myProgress'>
+
+            <div style='width:$_SESSION[pont_bar]%' id='myBar'></div>
+            
+        </div>";?>
+
+!-->
+        
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="dashboard.php">
             <i class="fa fa-fw fa-dashboard"></i>
@@ -89,10 +121,10 @@ if(!isset($_SESSION['login'])){//não está logado
             <span class="nav-link-text">Minha conta</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quiz">
-          <a class="nav-link" data-toggle="tooltip" href="quiz.php" data-parent="#exampleAccordion">
-            <i class="fa fa-graduation-cap"></i>
-            <span class="nav-link-text">Quiz</span>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="cadastraquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Cadastro de quiz</span>
           </a>
         </li>
       </ul>
@@ -137,7 +169,6 @@ if(!isset($_SESSION['login'])){//não está logado
       </div>
     </div>
 
-   
-  </div>
 
-  <
+
+  

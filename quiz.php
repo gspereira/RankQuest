@@ -1,7 +1,7 @@
 <?php
 include 'navbar.php';
 
-include "processa/conecta.php"; 
+include "../processa/conecta.php"; 
 $_SESSION['quest_id'] = $_GET['id'];
 $quest_id = $_SESSION['quest_id'];
 $_SESSION['titulo'] = $_GET['titulo'];
@@ -58,7 +58,7 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 
 
 
-<div style="height: 1000px" class="content-wrapper">
+
 <div class="container-fluid">
   <div class="row">
     <form>
@@ -123,7 +123,6 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 </div>
 
 
-</div>
 </div>
 
 
