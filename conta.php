@@ -17,9 +17,13 @@ include 'navbar.php'
                         <label for="inputName">Nome</label>
                         <input type="text" class="form-control" id="inputName" placeholder="Nome" value="" readonly>
                     </div>
+                     <div class="form-group">
+                        <label for="inputName">Login</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Nome" value="" readonly>
+                    </div>
                     <div class="form-group">
                         <label for="inputCpf">CPF</label>
-                        <input type="text" class="form-control" id="inputCpf" onBlur="ValidarCPF(form1.cpf);" 
+                        <input type="text" class="form-control" id="inputCpf"  readonly 
                         onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
                     </div>
                     <div class="form-group">
@@ -27,18 +31,16 @@ include 'navbar.php'
                         <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" value="">
                     </div>
                     <div class="form-group">
-                        <label for="inputPhone">Telefone/Celular</label>
-                        <input type="number" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
+                        <label for="inputPhone">Telefone</label>
+                        <input type="text" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
                         maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
                     </div>
-                    <div class="form-group">
-                        <label for="inputAtuacao">Área de Atuação</label>
-                        <select name="atuacao" id="inputAtuacao" class="form-control">
-                            <option selected>
-                                Área de Atuação
-                            </option>
-                        </select>
+                        <div class="form-group">
+                        <label for="inputPhone">Celular</label>
+                        <input type="text" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
+                        maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
                     </div>
+            
                     <button type="submit" class="btn btn-default">Salvar Mudanças</button>
                     <hr>
                     <div class="form-group">

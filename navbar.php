@@ -63,7 +63,7 @@ if(!isset($_SESSION['login'])){//não está logado
 
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">RankQuest</a>
@@ -127,14 +127,20 @@ if(!isset($_SESSION['login'])){//não está logado
             <span class="nav-link-text">Cadastro de quiz</span>
           </a>
         </li>
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="cadastravaga.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Cadastro de vaga</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="myquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Meus questionarios</span>
           </a>
         </li>
       </ul>
+  
       <!-- Navbar Search -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -147,9 +153,7 @@ if(!isset($_SESSION['login'])){//não está logado
       </div>
     </nav>
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
+
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">

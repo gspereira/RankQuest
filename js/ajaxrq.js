@@ -7,7 +7,7 @@ $(document).ready(function(){
             e.preventDefault();
             var dados = $('form#aluno').serialize();
             $.ajax({
-                url:'../processa/processa_cadastros.php',
+                url:'processa/processa_cadastros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
@@ -25,7 +25,7 @@ $(document).ready(function(){
             e.preventDefault();
             var dados = $('form#professor').serialize();
             $.ajax({
-                url:'../processa/processa_cadastros.php',
+                url:'processa/processa_cadastros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
@@ -41,7 +41,7 @@ $(document).ready(function(){
             e.preventDefault();
             var dados = $('form#empresa').serialize();
             $.ajax({
-                url:'../processa/processa_cadastros.php',
+                url:'processa/processa_cadastros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
@@ -58,7 +58,7 @@ $(document).ready(function(){
         	e.preventDefault();
         	var dados = $('form#login-form').serialize();
         	$.ajax({
-	        	url:'../processa/processa_login.php',
+	        	url:'processa/processa_login.php',
 	        	type:'POST',
 	        	dataType:'html',
 	        	data: dados,
@@ -80,7 +80,7 @@ $(document).ready(function(){
             var dados = $('form#form_pergunta').serialize();
             
             $.ajax({
-                url:'../processa/processa_cadastros.php',
+                url:'processa/processa_cadastros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
@@ -102,7 +102,7 @@ $(document).ready(function(){
             e.preventDefault();
             var dados = $('form#form-quiz').serialize();
             $.ajax({
-                url:'../processa/processa_cadastros.php',
+                url:'processa/processa_cadastros.php',
                 type:'POST',
                 dataType:'html',
                 data: dados,
@@ -121,7 +121,7 @@ $(document).ready(function(){
         var categoria = $('#combo_categorias').serialize();
 
         $.ajax({
-            url:'../processa/processa_combo.php',
+            url:'processa/processa_combo.php',
             type:'POST',
             dataType:'html',
             data: categoria,
@@ -138,7 +138,7 @@ $(document).ready(function(){
         var categoria = $('#combo_categorias2').serialize();
 
         $.ajax({
-            url:'../processa/processa_combo.php',
+            url:'processa/processa_combo.php',
             type:'POST',
             dataType:'html',
             data: categoria,
@@ -154,7 +154,7 @@ $(document).ready(function(){
         var categoria = $('#combo_categorias3').serialize();
 
         $.ajax({
-            url:'../processa/processa_combo.php',
+            url:'processa/processa_combo.php',
             type:'POST',
             dataType:'html',
             data: categoria,
@@ -169,7 +169,7 @@ $(document).ready(function(){
  $(document).on("click","#anterior",function(){
     var dados = $('form').serialize();
         $.ajax({
-            url:'../processa/anterior_prg.php',
+            url:'processa/anterior_prg.php',
             type:'POST',
             dataType:'html',
             data: dados,
@@ -184,7 +184,7 @@ $(document).ready(function(){
         
         var dados = $('form').serialize();
         $.ajax({
-            url:'../processa/proxima_prg.php',
+            url:'processa/proxima_prg.php',
             type:'POST',
             dataType:'html',
             data: dados,
@@ -201,7 +201,7 @@ $(document).ready(function(){
           if (confirmacao == true){
         var dados = $('form').serialize();
         $.ajax({
-            url:'../processa/grava_resultado.php',
+            url:'processa/grava_resultado.php',
             type:'POST',
             dataType:'html',
             data: dados,
@@ -218,37 +218,17 @@ $(document).ready(function(){
 
     $(document).on("click","#close",function(){
         
-        top.location.href="../dashboard.php"
+        top.location.href="dashboard.php"
     
     });
 
 
-
-   $(document).on("click","#aplicar_filtro",function(){
-
-         $('form#filtros').off();
-        $('form#filtros').submit(function(e){
-            e.preventDefault();
-            var dados = $('form#filtros').serialize();
-            $.ajax({
-                url:'../processa/processa_filtros.php',
-                type:'POST',
-                dataType:'html',
-                data: dados,
-                success: function(data){
-                    alert('sucesso');
-                $('#resultado').empty().html(data);
-                    
-                }
-            });
-        });
-    });
   $('#combo_categorias').click(function(){
         
         var categoria = $('#combo_categorias').serialize();
 
         $.ajax({
-            url:'../processa/processa_combo.php',
+            url:'processa/processa_combo.php',
             type:'POST',
             dataType:'html',
             data: categoria,
@@ -262,5 +242,43 @@ $(document).ready(function(){
 
 
 
+   $(document).on("click","#aplicar_filtro",function(){
 
+        $('form#filtros').off();
+        $('form#filtros').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#filtros').serialize();
+            $.ajax({
+                url:'processa/filtro.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    });
+
+   $(document).on("keyup","#titulo",function(){
+        
+            var dados = $('#titulo').serialize();
+            $.ajax({
+                url:'processa/filtro.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    
+
+
+ 
 });
