@@ -31,7 +31,7 @@ include 'navbar.php';
         <div class="col-lg-12 col-sm-10 col-xs-1">
           <!-- Barra de procura -->
           <div class="input-group">
-            <input id='titulo' name='titulo' type="text" class="form-control" placeholder="Busca de quastionário">
+            <input id='titulo' name='titulo' type="text" class="form-control" placeholder="Busca de questionário">
             <div class="dropdown dropdown-lg">
               <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-filter"></i>

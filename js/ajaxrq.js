@@ -279,6 +279,47 @@ $(document).ready(function(){
         });
     
 
+       $(document).on("click","#salvar",function(){
+
+        $('form#minhaconta').off();
+        $('form#minhaconta').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#minhaconta').serialize();
+            $.ajax({
+                url:'processa/altera_cadastro.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+        
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    });
+
+             $(document).on("click","#salvar2",function(){
+
+        $('form#alterasenha').off();
+        $('form#alterasenha').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#alterasenha').serialize();
+            $.ajax({
+                url:'processa/altera_senha.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+      
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    });
+
+
 
  
 });

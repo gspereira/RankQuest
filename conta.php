@@ -1,5 +1,17 @@
 <?php
-include 'navbar.php'
+include 'navbar.php';
+include 'processa/conecta.php';
+
+
+
+  $sql = $mysqli->prepare('SELECT U.NOME,U.CELULAR,U.TELEFONE,U.EMAIL,U.LOGIN,U.SENHA FROM USUARIO U,ALUNO A WHERE U.ID = A.USUARIO_ID AND U.ID = ?');
+  $sql->bind_param('i',$_SESSION['id']);
+  $sql->execute();
+  $sql->bind_result($nome,$celular,$telefone,$email,$login,$senha); 
+  $sql->store_result();
+$sql->fetch();
+
+
 ?> 
 <div style="height: 1000px" class="content-wrapper">
     <div class="container-fluid">
@@ -12,70 +24,59 @@ include 'navbar.php'
         <div class="user-data">
             <div class="row">
               <div class="col-lg-5">
-                <form>
+                <form id='minhaconta'>
                     <div class="form-group">
                         <label for="inputName">Nome</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Nome" value="" readonly>
+                        <input name='nome' type="text" class="form-control" id="nome" placeholder="Nome" value='<?php echo $nome ?>' readonly>
                     </div>
                      <div class="form-group">
                         <label for="inputName">Login</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Nome" value="" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputCpf">CPF</label>
-                        <input type="text" class="form-control" id="inputCpf"  readonly 
-                        onKeyPress="MascaraCPF(form1.cpf);" maxlength="14">
+                        <input name='login' type="text" class="form-control" id="login" placeholder="Login" value='<?php echo $login ?>' readonly>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" value="">
+                        <input name='email' type="email" class="form-control" id="email" placeholder="E-mail" value='<?php echo $email ?>'>
                     </div>
                     <div class="form-group">
                         <label for="inputPhone">Telefone</label>
-                        <input type="text" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
-                        maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
+                        <input name='telefone' value='<?php echo $telefone ?>' type="text" class="form-control" placeholder="Telefone">
                     </div>
                         <div class="form-group">
                         <label for="inputPhone">Celular</label>
-                        <input type="text" class="form-control" min="8" max="12" id="inputPhone" placeholder="Telefone/Celular" onKeyPress="MascaraTelefone(form1.tel);" 
-                        maxlength="14"  onBlur="ValidaTelefone(form1.tel);">
+                        <input name='celular' value='<?php echo $celular ?>' type="text" class="form-control" id="celular" placeholder="Celular">
                     </div>
             
-                    <button type="submit" class="btn btn-default">Salvar Mudanças</button>
+                    <button id='salvar' class="btn btn-default">Salvar Mudanças</button>
+                     </form>
+                    <form id='alterasenha'>
                     <hr>
                     <div class="form-group">
                         <label for="inputNewPass">Alterar Senha</label>
-                        <input type="password" class="form-control" id="inputNewPass" placeholder="Digite a nova senha" value="">
+                        <input name='senha' type="password" class="form-control" id="senha" placeholder="Digite a nova senha" value=''>
                     </div>    
                     <div class="form-group">
                         <label for="inputNewPass">Digite Novamente</label>
                         <input type="password" class="form-control" id="inputNewPass" placeholder="Digite novamente" value="">
                     </div>
-                    <button type="submit" class="btn btn-default">Alterar Senha</button>
-                </form>
+                    <button id='salvar2' class="btn btn-default">Alterar Senha</button>
+               </form>
+
+                <div id='resultado'></div>
+              
+    
+              
+
             </div>
-            <div class="col-lg-5">
-                <form>
-                    <div class="form-group">
-                        <label for="adcComp">Adicionar Competência</label>
-                        <select id="adcComp" class="form-control">
-                            <option selected>Competência</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default">Adicionar</button>
-                    </div>
-                    <div class="form-group">
-                        <label for="compList">Lista de Competências</label>
-                        <select multiple id="compList" class="form-control" readonly>
-                            <option></option>
-                        </select>
-                    </div>
-                </form>
-            </div>
+    
         </div>
     </div>
 </div>
 </div>
 
 <script language="JavaScript" type="text/javascript" src="../js.validateMask.js"></script>
+
+
+
+
+</body>  
+</html>
