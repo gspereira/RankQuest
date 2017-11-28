@@ -13,12 +13,11 @@ $i=0;
 
 
 
-?>
 <div style="height: 1000px" class="content-wrapper">
 	<div class="container-fluid">
 
 
-	<h2>Ranking</h2>
+	<h4>Ranking</h4>
 
 
 

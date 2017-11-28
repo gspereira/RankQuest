@@ -198,7 +198,7 @@ include  "processa/conecta.php";
           <!-- Barra de procura -->
           <div class="input-group">
 
-            <input type="text" class="form-control">
+            <input type="text" placeholder="Busque a pergunta" class="form-control">
 
             <div class="input-group-btn">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filtros">

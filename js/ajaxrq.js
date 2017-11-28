@@ -319,6 +319,64 @@ $(document).ready(function(){
         });
     });
 
+        $(document).on("click","#cadastra_vaga",function(){
+
+        $('form#vaga').off();
+        $('form#vaga').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#vaga').serialize();
+            $.ajax({
+                url:'processa/cadastra_vaga.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+      
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    });
+
+
+   $(document).on("click","#myquizaplicar_filtro",function(){
+
+        $('form#myquiz').off();
+        $('form#myquiz').submit(function(e){
+            e.preventDefault();
+            var dados = $('form#myquiz').serialize();
+            $.ajax({
+                url:'processa/filtro_myquiz.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+    });
+
+   $(document).on("keyup","#myquiztitulo",function(){
+        
+            var dados = $('#myquiztitulo').serialize();
+            $.ajax({
+                url:'processa/filtro_myquiz.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+
+
 
 
  
