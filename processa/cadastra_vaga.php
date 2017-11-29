@@ -12,13 +12,16 @@ $sql = $mysqli->prepare('INSERT INTO vaga (empresa_id,questionario_id,descricao,
 $sql->bind_param('iisss',$_SESSION['id'] ,$_POST['questionario'],$_POST['descricao'] ,$_POST['dtinicio'] ,$_POST['dtfim']);
 $sql->execute();
 
- if($sql->error){
-    echo "<h5>Erro no cadastro: $sql->error</h5>";
- 
+
+    if($sql->error){
+    
+echo "<div class='alert alert-success'>
+                    <strong>Error!</strong> Erro ao cadastrar, tente novamente.
+                </div>";
 }else{
 
 echo "<div class='alert alert-success'>
-                    <strong>Sucesso!</strong> Vaga cadastrada.
+                    <strong>Sucesso!</strong>Cadastrado com sucesso.
                 </div>";
 
 }

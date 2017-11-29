@@ -27,15 +27,31 @@ $sql = $mysqli->prepare('SELECT a.xp,a.level,u.id,u.tipo from aluno as a ,usuari
         $_SESSION['pont_max'] = (($_SESSION['level'] * 1.5) * 150);
         $_SESSION['pont_bar'] = intval(($_SESSION['xp'] /$_SESSION['pont_max']) * 100 );
 
-        echo '<script>top.location.href="../dashboard.php";</script>';
+
+
+if($_SESSION['tipo'] == 'A')echo '<script>top.location.href="../buscaquiz.php";</script>';
         
+
+elseif($_SESSION['tipo'] == 'P')echo '<script>top.location.href="../cadastraquiz.php";</script>';
+
+elseif($_SESSION['tipo'] == 'E')echo '<script>top.location.href="../cadastravaga.php";</script>';
+
+elseif($_SESSION['tipo'] == 'S')echo '<script>top.location.href="../dashboard.php";</script>';
+
+
     }
-    else{echo "<h2>Dados Invalidos</h2>";       
-    }
+        
+}
+   else{
     
+echo "<div class='alert alert-danger'>
+                   Usuário ou senha incorretos, tente novamente.
+                </div>";
+
+}
 
 
-       } 
+       
        
 
 		

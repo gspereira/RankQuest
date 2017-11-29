@@ -10,16 +10,20 @@
   
 
 
+ 
     if($sql->error){
-    echo "<h5>Erro no cadastro: $sql->error</h5>";
-    $sql->close();
+    
+echo "<div class='alert alert-success'>
+                    <strong>Error!</strong> Erro ao alterar a senha, tente novamente.
+                </div>";
 }else{
 
 echo "<div class='alert alert-success'>
-                    <strong>Success!</strong> Indicates a successful or positive action.
+                    <strong>Sucesso!</strong> Senha alterada!
                 </div>";
 
 }
+  $sql->close();
   $sql->close();
 ?>
 

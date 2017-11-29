@@ -89,6 +89,186 @@ if(!isset($_SESSION['login'])){//não está logado
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+
+   <?php if($_SESSION['tipo'] == 'A'){
+
+          echo'
+          
+                 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Busca Quiz">
+          <a class="nav-link" href="buscaquiz.php">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Buscar Quiz</span>
+          </a>
+        </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ranking">
+          <a class="nav-link" href="ranking.php">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Ranking</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Vagas">
+          <a class="nav-link" data-toggle="tooltip" href="vagas.php" data-parent="#exampleAccordion">
+            <i class="fa fa-handshake-o"></i>
+            <span class="nav-link-text">Vagas</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="conta.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Minha conta</span>
+          </a>
+        </li>
+
+         </ul>
+  
+      <!-- Navbar Search -->
+      <ul class="navbar-nav ml-auto">
+     	<li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
+          </li>
+        </ul>
+
+
+          ';
+        }
+
+
+
+ elseif($_SESSION['tipo'] == 'P'){
+
+          echo'
+          
+
+ <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+   <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="cadastraquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Cadastro de questionário</span>
+          </a>
+        </li>
+
+           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="myquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Meus questionarios</span>
+          </a>
+        </li>
+				 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ranking">
+          <a class="nav-link" href="ranking.php">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Ranking</span>
+          </a>
+        </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="conta.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Minha conta</span>
+          </a>
+        </li>
+
+          </ul>
+  
+      <!-- Navbar Search -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
+          </li>
+        </ul>
+
+
+
+
+
+
+
+
+          ';
+        }
+
+
+
+       elseif($_SESSION['tipo'] == 'E'){
+
+          echo'
+          
+
+ <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+
+ 
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="cadastravaga.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Cadastro de vaga</span>
+          </a>
+        </li>
+
+             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="cadastraquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Cadastro de questionário</span>
+          </a>
+        </li>
+
+     
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="minhasvagas.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Minhas vagas</span>
+          </a>
+        </li>
+
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="myquiz.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Meus questionarios</span>
+          </a>
+        </li>
+
+				 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ranking">
+          <a class="nav-link" href="ranking.php">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Ranking</span>
+          </a>
+        </li>
+     
+
+          </ul>
+  
+      <!-- Navbar Search -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Sair</a>
+          </li>
+        </ul>
+
+
+
+          ';
+        }
+
+
+
+
+     elseif($_SESSION['tipo'] == 'S'){
+
+          echo'
+          
+
+
+
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -139,6 +319,13 @@ if(!isset($_SESSION['login'])){//não está logado
             <span class="nav-link-text">Meus questionarios</span>
           </a>
         </li>
+
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+          <a class="nav-link" data-toggle="tooltip" href="minhasvagas.php" data-parent="#exampleAccordion">
+            <i class="fa fa-address-card-o"></i>
+            <span class="nav-link-text">Minhas vagas</span>
+          </a>
+        </li>
       </ul>
   
       <!-- Navbar Search -->
@@ -150,9 +337,19 @@ if(!isset($_SESSION['login'])){//não está logado
             <i class="fa fa-fw fa-sign-out"></i>Sair</a>
           </li>
         </ul>
-      </div>
+   
+
+
+
+  
+          ';
+        }
+
+        ?>
+   </div>
     </nav>
-    <!-- Scroll to Top Button-->
+    
+<!-- Scroll to Top Button-->
 
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -172,7 +369,3 @@ if(!isset($_SESSION['login'])){//não está logado
         </div>
       </div>
     </div>
-
-
-
-  

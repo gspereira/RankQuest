@@ -15,10 +15,14 @@ $mysqli->autocommit(FALSE);
 
 $sql->execute();
 
-if($sql->error){
-    echo "<h5>Erro no cadastro: $sql->error</h5>";
-    $sql->close();
+
+    if($sql->error){
+    
+echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar, $sql->error.
+                </div>";
 }
+ 
 else{
 
 
@@ -31,13 +35,17 @@ if($_POST['tipo'] == 'A'){
     $sql->execute();
 
     if($sql->error){
-        echo "<h5>Erro no cadastro: $sql->error</h5>";
+    echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar,$sql->error.
+                </div>";
          
         $sql->close();
     }
     else{
 
-        echo "<h5>Cadastrado com sucesso!!";
+        echo "<div class='alert alert-success'>
+                    <strong>Sucesso!</strong> Cadastrado com sucesso.
+                </div>";
         $mysqli->commit();
         $sql->close();
     }
@@ -51,12 +59,16 @@ elseif($_POST['tipo'] == 'P'){
     $sql->bind_param('sss',$_POST['area_atuacao'],$_POST['cpf'] ,$_POST['dt_nascimento']);
     $sql->execute();
     if($sql->error){
-        echo "<h5>Erro no cadastro: $sql->error</h5>";
+            echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar,$sql->error.
+                </div>";
          
         $sql->close();
     }
     else{
-        echo "<h5>Cadastrado com sucesso!!";
+           echo "<div class='alert alert-success'>
+                    <strong>Sucesso!</strong> Dados alterados.
+                </div>";
         $mysqli->commit();
         $sql->close();
     }
@@ -74,13 +86,16 @@ else{
     $sql->execute();
 
     if($sql->error){
-        echo "<h5>Erro no cadastro: $sql->error</h5>";
+         echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar,$sql->error.
+                </div>";
          
         $sql->close();
     }
     else{
-        echo $sql->error;
-        echo "<h5>Cadastrado com sucesso!!";
+          echo "<div class='alert alert-success'>
+                    <strong>Sucesso!</strong> Dados alterados.
+                </div>";
         $mysqli->commit();
         $sql->close();
     }
@@ -107,7 +122,9 @@ if(isset($_POST['funcao']) && $_POST['funcao'] == 'cadastro_pergunta'){
 	$sql->execute();
 
 	if($sql->error){
-	    echo "<h5>Erro no cadastro: $sql->error</h5>";
+	    echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar,$sql->error.
+                </div>";
 	    $sql->close();
 	}
 	else{
@@ -138,7 +155,9 @@ if(isset($_POST['funcao']) && $_POST['funcao'] == 'cadastro_pergunta'){
 			if($sql->error){
 
 
-       			 echo "<h5>Erro dso cadastro: $sql->error</h5>";
+       			 echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao cadastrar,$sql->error.
+                </div>";
        			 $sql->close();
        			 $erro = '1';
     		}
@@ -148,7 +167,9 @@ if(isset($_POST['funcao']) && $_POST['funcao'] == 'cadastro_pergunta'){
 	if($erro != '1'){
 		
 		
-		echo "<h5>Cadastrado com sucesso!!";
+		  echo "<div class='alert alert-success'>
+                    <strong>Sucesso!</strong> Dados alterados.
+                </div>";
 		 $mysqli->commit();
 		$sql->close();
 	}

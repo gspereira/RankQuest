@@ -32,65 +32,7 @@ include 'navbar.php';
 	 <div class="row">
         <div class="col-lg-12 col-sm-10 col-xs-1">
           <!-- Barra de procura -->
-          <div class="input-group">
-            <input id='myquiztitulo' name='myquiztitulo' type="text" class="form-control" placeholder="Busca de questionário">
-            <div class="dropdown dropdown-lg">
-              <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-filter"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" role="menu">
-                <form id='myquiz' class="form-horizontal" role="form">
-                  <label for="filter">Filtros</label>
-                  <hr>
-                  <div class="form-group row">
-                    <label for="searchCurso" class="col-sm-2 col-form-label">Categoria</label>
-                    <div class="col-sm-10">
-            
-
-
-
-                 <select id='combo_categorias'  name='combo_categorias' class='custom-select' >
-                          <option value=''>Escolha uma categoria</option>
-                    
-  <?php while($sql2->fetch()){
-
-                        	echo" <option value='$id'>$descricao </option>";}?>
-
-                      </select>
-                    </div>
-                  </div>
-                  <div class='form-group row'>
-                    <label for='searchAssunto' class='col-sm-2 col-form-label'>Assunto</label>
-                    <div class="col-sm-10">
-           <select name='combo_assunto' class='custom-select' id='combo_assunto'>
-                        <option value=''>Escolha um assunto</option>
-                    
-
-                      </select>
-                  
-
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="searchNivel" class="col-sm-2 col-form-label">Dificuldade</label>
-                    <div class="col-sm-10">
-                       <select  name='combo_dificuldade' class='custom-select' id='searchNivel'>
-                        <option value='' selected>Escolha uma dificuldade</option>
-                       <?php while($sql4->fetch()){echo" <option value='$id'>$descricao </option>"   ; }?>
-                      </select>
-                    </div>
-                  </div>
-                  <hr>
-                  <button id='myquizaplicar_filtro' name='aplicar_filtro' class="btn btn-primary pull-right">Aplicar</button>
-                  <input name='funcao' type="hidden" class="form-control" value='filtrar-questionarios'>
-                </form>
-              </div>
-            </div>
-            
-       </div>
-     </div>
-   
-</div>
+          
 
 
 <div id='resultado' class="row">
@@ -111,6 +53,10 @@ include 'navbar.php';
      <h6>Autor: $autor</h6>
 
       <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Iniciar</a>
+      <a href=ranking.php?id=$id class='btn btn-success btn-block'>Ver ranking</a>
+      <a href=# class='btn btn-success btn-block'>Inativar</a>
+      <a href=# class='btn btn-success btn-block'>Deletar</a>
+
       </div>
 
    

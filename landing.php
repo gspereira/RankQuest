@@ -94,9 +94,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header" align="center">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </button>
+            
             </div>
 
             <!-- Begin # DIV Form -->
@@ -107,19 +105,23 @@
                 <div class="modal-body">
                   <div id="div-login-msg">
                     <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                    <span id="text-login-msg">Digite seu login e senha.</span>
+                    <span id="text-login-msg">Digite seu login e senha.
+                       <div id="resultado"></div>
+
+                    </span>
                   </div>
                   <input name="login" id="login" class="form-control" type="text" placeholder="Login" required>
                   <input name='senha' id="senha" class="form-control" type="password" placeholder="Senha" required>
                   
                 </div>
                 <div class="modal-footer">
-                  <div id="resultado"></div>
+
+                
                   <div>
                     <button id="envia_login" class="btn btn-primary" href="dashboard.php">Login</button>
                   </div>
                   <div>
-                    <button type="button" data-toggle="modal" data-target="#lost-form" class="btn btn-link" href="esqueceusenha.php">Esqueci minha senha</button>
+                   
                     <a id="login_register_btn"  class="btn btn-link" href="register.php">Registrar</a>
                   </div>
                 </div>

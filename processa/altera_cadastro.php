@@ -11,8 +11,10 @@
 
 
     if($sql->error){
-    echo "<h5>Erro no cadastro: $sql->error</h5>";
-    $sql->close();
+    
+echo "<div class='alert alert-danger'>
+                    <strong>Error!</strong> Erro ao atualizar dados, tente novamente.
+                </div>";
 }else{
 
 echo "<div class='alert alert-success'>

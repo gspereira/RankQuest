@@ -17,7 +17,7 @@ $i=0;
 	<div class="container-fluid">
 
 
-	<h4>Ranking</h4>
+	<h3>Ranking</h3>
 
 
 

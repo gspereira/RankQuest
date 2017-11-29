@@ -47,7 +47,7 @@ include  "processa/conecta.php";
       <a class="nav-link active" id="tab_pergunta" data-toggle="tab" href="#cadastro_pergunta" role="tab" aria-controls="profile" aria-selected="true">Cadastro de pergunta</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " id="tab_quiz" data-toggle="tab" href="#cadastro_quiz" role="tab" aria-controls="cadastro_quiz" aria-selected="false">Cadastro de quiz</a>
+      <a class="nav-link " id="tab_quiz" data-toggle="tab" href="#cadastro_quiz" role="tab" aria-controls="cadastro_quiz" aria-selected="false">Cadastro de questionário</a>
     </li>
   </ul>
 
@@ -58,8 +58,9 @@ include  "processa/conecta.php";
 
     <div class="tab-pane fade show active" id="cadastro_pergunta" role="tabpanel" aria-labelledby="tab_pergunta">
   <form id=form_pergunta>
-
-      <h2>Cadastrar Perguntas</h2>
+<br>
+      <h3>Cadastro de Perguntas</h3>
+<br>
       <div class="col-lg-10">
         <div id="combo_perguntas" class="form-group">
           
@@ -162,8 +163,9 @@ include  "processa/conecta.php";
 
     <div class="tab-pane fade " id="cadastro_quiz" role="tabpanel" aria-labelledby="tab_quiz">
       <form id='form-quiz'>
-
-        <h2>Cadastrar Quiz</h2>
+<br>
+        <h3>Cadastro de questionário</h3>
+<br>        
         <div class="col-lg-6">
           <div class="form-group">
             

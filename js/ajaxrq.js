@@ -63,6 +63,7 @@ $(document).ready(function(){
 	        	dataType:'html',
 	        	data: dados,
 		        success: function(data){
+                   
 	        	$('#resultado').empty().html(data);
 
 	        	}
@@ -375,6 +376,25 @@ $(document).ready(function(){
                 }
             });
         });
+
+   $(document).on("keyup","#filtro_vaga",function(){
+        
+            var dados = $('#filtro_vaga').serialize();
+            $.ajax({
+                url:'processa/filtro_vagas.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+
+
+
 
 
 

@@ -17,7 +17,7 @@ $sql->fetch();
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-10 page-title">
-                <h2>Minha Conta</h2>
+                <h3>Minha Conta</h3>
                 <hr>
             </div>
         </div>
