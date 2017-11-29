@@ -55,36 +55,37 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 
 
 ?>
+<title>RankQuest - Quiz</title>
 <div style="height: 1000px" class="content-wrapper">
 
 
 
-<div class="container-fluid">
-  <div class="row">
-    <form>
-      <div id='resultado'  class="col-lg-10 col-sm-8 col-xs-1">
+  <div class="container-fluid">
+    <div class="row">
+      <form>
+        <div id='resultado'  class="col-lg-10 col-sm-8 col-xs-1">
 
-       <?php     
-
-
-       $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
-       $numero = $_SESSION['contador'] ;
-       echo " 
-       <h5>$numero)$enunciado</h5>";
+         <?php     
 
 
-       for($j='1';$j <= count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){
-        $alt = $j;
-        $alternativa = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['descricao'];
-        $ind_correta = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['ind_correta'];
+         $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
+         $numero = $_SESSION['contador'] ;
+         echo " 
+         <h5>$numero)$enunciado</h5>";?>
+         
+
+         for($j='1';$j <= count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){
+         $alt = $j;
+         $alternativa = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['descricao'];
+         $ind_correta = $array_perguntas[$_SESSION['contador']]['alternativa'][$j]['ind_correta'];
 
 
-        echo "
-        <div class='input-group quiz-group'>
-        <span class='input-group-addon'>
-        <input type='radio' '$alt' name='resposta' value='$alt'>
-        </span>
-        <textarea readonly class='form-control' name='a$j'>$alternativa</textarea>
+         echo "
+         <div class='input-group quiz-group'>
+          <span class='input-group-addon'>
+            <input type='radio' '$alt' name='resposta' value='$alt'>
+          </span>
+          <textarea readonly class='form-control' name='a$j'>$alternativa</textarea>
         </div>";
       }
 
@@ -99,38 +100,11 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 
     </div>
 
-
   </form>
-
-
 
   <div id='modal'></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
 </div>
-
-
-
-
 </body>
-
 </html>
-
-
-

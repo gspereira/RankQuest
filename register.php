@@ -80,6 +80,8 @@
                                 <input name='funcao' type="hidden" class="form-control" id="tipo" value="cadastro_usuario" >
                                 <hr>
                                 <button id="cadastrar_aluno" class="btn btn-default">Cadastrar</button>
+                                <h3 align="right">RankQuest - Seu quiz de sucesso.</h3>
+
                              </div>
                         </form>
                     </div> 

@@ -94,7 +94,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header" align="center">
-            
+
             </div>
 
             <!-- Begin # DIV Form -->
@@ -106,80 +106,80 @@
                   <div id="div-login-msg">
                     <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
                     <span id="text-login-msg">Digite seu login e senha.
-                       <div id="resultado"></div>
+                     <div id="resultado"></div>
 
-                    </span>
-                  </div>
-                  <input name="login" id="login" class="form-control" type="text" placeholder="Login" required>
-                  <input name='senha' id="senha" class="form-control" type="password" placeholder="Senha" required>
-                  
+                   </span>
+                 </div>
+                 <input name="login" id="login" class="form-control" type="text" placeholder="Login" required>
+                 <input name='senha' id="senha" class="form-control" type="password" placeholder="Senha" required>
+
+               </div>
+               <div class="modal-footer">
+
+
+                <div>
+                  <button id="envia_login" class="btn btn-primary" href="dashboard.php">Login</button>
                 </div>
-                <div class="modal-footer">
+                <div>
 
-                
-                  <div>
-                    <button id="envia_login" class="btn btn-primary" href="dashboard.php">Login</button>
-                  </div>
-                  <div>
-                   
-                    <a id="login_register_btn"  class="btn btn-link" href="register.php">Registrar</a>
-                  </div>
+                  <a id="login_register_btn"  class="btn btn-link" href="register.php">Registrar</a>
                 </div>
-              </form>
-              <!-- End # Login Form -->
+              </div>
+            </form>
+            <!-- End # Login Form -->
 
-            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 
 
 
 
-    <div class="login-modal">
-      
-      <div class="modal fade" id="lost-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header" align="center">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </button>
-            </div>
+  <div class="login-modal">
 
-            <!-- Begin # DIV Form -->
-            <div id="div-forms">
+    <div class="modal fade" id="lost-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
 
-              <!-- Begin # Login Form -->
-              <form id="lost-form">
-                <div class="modal-body">
-                  <div id="div-login-msg">
-                    <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                    <span id="text-login-msg">Digite seu email para redefinir a senha.</span>
-                  </div>
-                  <input name='email' id="email" class="form-control" type="text" placeholder="email" required>
+          <!-- Begin # DIV Form -->
+          <div id="div-forms">
+
+            <!-- Begin # Login Form -->
+            <form id="lost-form">
+              <div class="modal-body">
+                <div id="div-login-msg">
+                  <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                  <span id="text-login-msg">Digite seu email para redefinir a senha.</span>
                 </div>
-                <div class="modal-footer">
-                  <div>
-                   <button id="envia_senha" class="btn btn-primary">Login</button>
-                 </div>
-
+                <input name='email' id="email" class="form-control" type="text" placeholder="email" required>
+              </div>
+              <div class="modal-footer">
+                <div>
+                 <button id="envia_senha" class="btn btn-primary">Login</button>
                </div>
-             </form>
-             <!-- End # Login Form -->
 
-           </div>
+             </div>
+           </form>
+           <!-- End # Login Form -->
+
          </div>
        </div>
      </div>
    </div>
-   
  </div>
 
+</div>
 
- 
+
+
 
 
 </body>  

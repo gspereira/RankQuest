@@ -12,7 +12,8 @@ include 'processa/conecta.php';
 $sql->fetch();
 
 
-?> 
+?>
+<title>RankQuest - Minha conta</title>
 <div style="height: 1000px" class="content-wrapper">
     <div class="container-fluid">
         <div class="row">
