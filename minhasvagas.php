@@ -51,7 +51,13 @@ include 'navbar.php';
 <div id='resultado' class="row">
   
 
-<?php while($sql1->fetch()){
+
+<?php
+
+
+   if(($sql1->num_rows()) > 0){
+
+ while($sql1->fetch()){
 
 $titulo = urlencode($titulo);
 
@@ -98,12 +104,25 @@ echo"
 }
 
 
-     
+     }
+
+   }
+
+   else{
+
+
+
+    echo "<h3>Nenhuma vaga cadastrada em seu usuário</h3>";
+
+
+
+
+     }
       
    
 
 
-}?>
+?>
 
 
 

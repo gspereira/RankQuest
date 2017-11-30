@@ -38,7 +38,11 @@ include 'navbar.php';
 <div id='resultado' class="row">
   
 
-<?php while($sql1->fetch()){
+<?php
+
+    
+   if(($sql1->num_rows()) > 0){
+   while($sql1->fetch()){
 
 $titulo2 = urlencode($titulo);
 
@@ -63,7 +67,20 @@ $titulo2 = urlencode($titulo);
    
 ";
 
-}?>
+}
+
+}else{
+
+
+ echo "<h3>Nenhum questionario cadastrado em seu usuário</h3>";
+
+
+
+}
+
+
+
+?>
 
 </div>
 
