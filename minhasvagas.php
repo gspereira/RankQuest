@@ -66,7 +66,7 @@ include 'navbar.php';
 ";
 
 
-if($questionario_id == 0){
+if($questionario == 0){
 
 echo "
 
