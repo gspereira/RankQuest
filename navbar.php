@@ -22,33 +22,47 @@ if(!isset($_SESSION['login'])){//não está logado
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <style>
+  #myProgress {
+    width: 100%;
+    background-color: #ddd;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#myBar {
+
+    height: 18px;
+    background-color: #4CAF50;
+}
+</style>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">RankQuest</a>
+    <a class="navbar-brand" href="#">RankQuest</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      <a style='color:white;margin:20px; text-align: center;'>Bem vindo <?php echo $_SESSION['login']?></a>
+    <!--
+      <a style='color: white; margin: 7px; text-align: center;'>Bem vindo <?php echo $_SESSION['login']?></a>
 
-      <a style='width:200px'><?php echo  "<a style='color:white;text-align:center'>Level:$_SESSION[level] <br> XP:$_SESSION[xp] / $_SESSION[pont_max]</a>
-      <div   id='myProgress'>
-
+      <a style='width: 250px'><?php echo  "<a style='color: white; text-align: center'>Level: $_SESSION[level] <br> XP: $_SESSION[xp] / $_SESSION[pont_max]</a>
+      <div id='myProgress'>
       <div style='width:$_SESSION[pont_bar]%' id='myBar'></div>
 
   </div>";?>
-  
-  <?php if($_SESSION['tipo'] == 'A'){
+-->
+
+<?php if($_SESSION['tipo'] == 'A'){
 
     echo'
 
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-
-
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Busca Quiz">
     <a class="nav-link" href="buscaquiz.php">
     <i class="fa fa-fw fa-table"></i>

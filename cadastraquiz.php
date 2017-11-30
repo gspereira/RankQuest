@@ -61,10 +61,10 @@ include  "processa/conecta.php";
 <br>
       <h3>Cadastro de Perguntas</h3>
 <br>
-      <div class="col-lg-10">
+      <div class="col-lg-6">
         <div id="combo_perguntas" class="form-group">
           
-          <select class="custom-select"   id='combo_categorias' type='text' name='combo_categorias' required>
+          <select style="width: 75%" class="custom-select"   id='combo_categorias' type='text' name='combo_categorias' required>
 
             <option value=''>Selecione uma categoria </option>
             <?php while ($sql1->fetch()){
@@ -74,11 +74,11 @@ include  "processa/conecta.php";
            </select>
 
 
-          <select class="custom-select"  id='combo_assunto' type='text' name='combo_assunto' required>
+          <select style="width: 75%" class="custom-select"  id='combo_assunto' type='text' name='combo_assunto' required>
             <option value="">Selecione o assunto </option>
            </select>
 
-           <select class="custom-select"   id='combo_dificuldade' type='text' name='combo_dificuldade' required>
+           <select style="width: 75%" class="custom-select"   id='combo_dificuldade' type='text' name='combo_dificuldade' required>
           <option value="">Selecione a dificuldade </option>
               <?php while ($sql4->fetch()){
                       echo  "<option value='$id'>$descricao </option>" ;
@@ -169,14 +169,14 @@ include  "processa/conecta.php";
         <div class="col-lg-6">
           <div class="form-group">
             
-            <select class="custom-select"  id='combo_categorias2' type='text' name='combo_categorias'>
+            <select style="width: 75%" class="custom-select"  id='combo_categorias2' type='text' name='combo_categorias'>
               <option selected>Selecione uma categoria</option>
               <?php    while ($sql2->fetch()){
                       echo  "<option value='$id'>$descricao </option>" ;
                     } 
                 ?>
              </select>
-            <select class="custom-select"   id='combo_assunto2' type='text' name='combo_assunto'>
+            <select style="width: 75%" class="custom-select"   id='combo_assunto2' type='text' name='combo_assunto'>
               <option value="">Selecione o assunto </option>
              </select>
           </div>
