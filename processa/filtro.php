@@ -78,23 +78,24 @@ $sql->bind_param('ii',$_POST['combo_categorias'],$_POST['combo_dificuldade']);
  
 
 		while($sql->fetch()){
+      $titulo2 = urlencode($titulo);
 
-			echo "
-   
-    <div id='div-quiz' class='col-lg-3 col-xs-12 col-sm-5'>
+		echo "
+
+    <div id='div-quiz' class='col-lg-3 col-xs-12 col-sm-5' style='text-align: center; margin-top: 5px'>
     <div style='height:150px;'> 
-      <h4>$titulo
-      <h5>$descricao</h5>
-      
-   </div>
-      <h6>$categoria/$assunto - $dificuldade</h6>
-     <h6>Autor: $autor</h6>
+    <h4>$titulo
+    <h5>$descricao</h5>
 
-      <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Iniciar</a>
-      </div>
+    </div>
+    <h6>$categoria/$assunto - $dificuldade</h6>
+    <h6>Autor: $autor</h6>
 
-   
-";
+    <a href=quiz.php?id=$id&titulo=$titulo2 class='btn btn-success btn-block'>Iniciar</a>
+    </div>
+
+
+    ";
 
 
 

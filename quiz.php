@@ -63,7 +63,13 @@ $_SESSION['array_perguntas'] = $array_perguntas;
   <div class="container-fluid">
     <div class="row">
       <form  style='width:100%'>
+
+        <h3><?php echo $_SESSION['titulo'] ?></h3><br>
+
+
         <div id='resultado'  class="col-lg-12 col-sm-12 col-xs-12">
+
+        
 
          <?php     
 

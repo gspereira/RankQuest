@@ -62,7 +62,7 @@ if(count($_SESSION['array_respostas']) >= $_SESSION['contador']){
 
 $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
 $numero = $_SESSION['contador'] ;
-echo " <h4>$_SESSION[titulo]</h4>
+echo "
 <form>
 <h5>$numero)$enunciado</h5>";
 

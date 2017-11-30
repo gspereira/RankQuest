@@ -40,9 +40,9 @@
 
 
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#tab_aluno">Cadastro de alunos</a></li>
-    <li><a data-toggle="tab" href="#tab_professor">Cadastro de professores</a></li>
-    <li><a data-toggle="tab" href="#tab_empresa">Cadastro de empresas</a></li>
+    <li class="active"><a data-toggle="tab" href="#tab_aluno">Alunos</a></li>
+    <li><a data-toggle="tab" href="#tab_professor">Professores</a></li>
+    <li><a data-toggle="tab" href="#tab_empresa">Empresas</a></li>
    
   </ul>
 

@@ -35,13 +35,18 @@ include 'navbar.php';
         <div class="col-lg-5">
         <form id='vaga'>
           
+
+      <div class="form-group">
+   <label for="inputName">Titulo</label>
+  <input placeholder="Titulo da vaga" class='form-control' required name='titulo'></input>
+  </div>      
    <div class="form-group">
    <label for="inputName">Descrição</label>
-  <textarea placeholder="Descrição da vaga" class='form-control' id='descricao' name='descricao'></textarea>
+  <textarea required placeholder="Descrição da vaga" class='form-control' id='descricao' name='descricao'></textarea>
   </div>
            <div class="form-group">
             <label for="inputName">Data de inicio</label>
-            <input name='dtinicio' type="text" class="form-control" id="dtinicio" onfocus="(this.type='date')" placeholder="Data de Inicio" >
+            <input required name='dtinicio' type="text" class="form-control" id="dtinicio" onfocus="(this.type='date')" placeholder="Data de Inicio" >
           </div>
            <div class="form-group">
             <label for="inputName">Data de termino</label>

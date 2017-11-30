@@ -2,9 +2,9 @@
 include 'navbar.php';
 
 include 'processa/conecta.php';
-$sql1 = $mysqli->prepare('select v.id,u.nome,e.responsavel,v.descricao,v.questionario_id,q.titulo,v.dt_cad,v.dt_ini,v.dt_fim from vaga as v,usuario as u,empresa as e,questionario as q where v.empresa_id = e.usuario_id and e.usuario_id = u.id and q.autor_id = v.empresa_id ');
+$sql1 = $mysqli->prepare('select v.id,v.titulo,u.nome,e.responsavel,v.descricao,v.questionario_id,q.titulo,v.dt_cad,v.dt_ini,v.dt_fim from vaga as v,usuario as u,empresa as e,questionario as q where v.empresa_id = e.usuario_id and e.usuario_id = u.id and q.autor_id = v.empresa_id ');
 $sql1->execute();
-$sql1->bind_result($id,$nome,$responsavel,$descricao,$questionario,$titulo,$dt_cadastro,$dt_inicio,$dt_fim); 
+$sql1->bind_result($id,$titulo,$nome,$responsavel,$descricao,$questionario,$titulo,$dt_cadastro,$dt_inicio,$dt_fim); 
 $sql1->store_result();
 
 $sql2 = $mysqli->prepare('select id,descricao from categoria');
@@ -54,8 +54,8 @@ $sql4->store_result();
       echo "
       
       <div id='div-quiz' class='col-lg-3 col-xs-12 col-sm-5'>
-      <div style='height:135px;'> 
-      <h4>$nome
+      <div style='height:135px;'>
+      <h4>$nome</h4> 
       <h5>$descricao</h5>
       </div>
       <h6>Périodo: $dt_inicio ate $dt_fim</h6>

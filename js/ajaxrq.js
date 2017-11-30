@@ -394,6 +394,24 @@ $(document).ready(function(){
         });
 
 
+   $(document).on("mouseup","#selquiz",function(){
+        
+            var dados = $('#selquiz').serialize();
+            $.ajax({
+                url:'processa/processa_ranking.php',
+                type:'POST',
+                dataType:'html',
+                data: dados,
+                success: function(data){
+           
+                $('#resultado').empty().html(data);
+                    
+                }
+            });
+        });
+
+
+
 
 
 

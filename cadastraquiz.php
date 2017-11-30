@@ -44,10 +44,10 @@ include  "processa/conecta.php";
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="tab_pergunta" data-toggle="tab" href="#cadastro_pergunta" role="tab" aria-controls="profile" aria-selected="true">Cadastro de pergunta</a>
+      <a class="nav-link active" id="tab_pergunta" data-toggle="tab" href="#cadastro_pergunta" role="tab" aria-controls="profile" aria-selected="true">Pergunta</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " id="tab_quiz" data-toggle="tab" href="#cadastro_quiz" role="tab" aria-controls="cadastro_quiz" aria-selected="false">Cadastro de questionário</a>
+      <a class="nav-link " id="tab_quiz" data-toggle="tab" href="#cadastro_quiz" role="tab" aria-controls="cadastro_quiz" aria-selected="false">Questionário</a>
     </li>
   </ul>
 

@@ -6,10 +6,10 @@ include('conecta.php');
 
 if(!isset($_POST['questionario']))$_POST['questionario'] = '';
 
-$sql = $mysqli->prepare('INSERT INTO vaga (empresa_id,questionario_id,descricao,dt_ini,dt_fim)
-    VALUES(?,?,?,?,?)');
+$sql = $mysqli->prepare('INSERT INTO vaga (titulo,empresa_id,questionario_id,descricao,dt_ini,dt_fim)
+    VALUES(?,?,?,?,?,?)');
 
-$sql->bind_param('iisss',$_SESSION['id'] ,$_POST['questionario'],$_POST['descricao'] ,$_POST['dtinicio'] ,$_POST['dtfim']);
+$sql->bind_param('siisss',$_POST['titulo'],$_SESSION['id'] ,$_POST['questionario'],$_POST['descricao'] ,$_POST['dtinicio'] ,$_POST['dtfim']);
 $sql->execute();
 
 

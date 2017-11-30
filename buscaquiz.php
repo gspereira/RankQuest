@@ -97,6 +97,7 @@ $sql4->store_result();
 
   <?php while($sql1->fetch()){
 
+   $titulo2 = urlencode($titulo);
 
     echo "
 
@@ -109,7 +110,7 @@ $sql4->store_result();
     <h6>$categoria/$assunto - $dificuldade</h6>
     <h6>Autor: $autor</h6>
 
-    <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Iniciar</a>
+    <a href=quiz.php?id=$id&titulo=$titulo2 class='btn btn-success btn-block'>Iniciar</a>
     </div>
 
 
