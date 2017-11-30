@@ -50,6 +50,8 @@ $sql4->store_result();
 
     <?php while($sql1->fetch()){
 
+      $titulo2 = urlencode($titulo);
+
 
       echo "
       
@@ -81,7 +83,7 @@ $sql4->store_result();
 
         echo"
 
-        <a href=quiz.php?id=$questionario&titulo=$titulo class='btn btn-success btn-block'>Iniciar questionario/Candidatar</a>
+        <a href=quiz.php?id=$questionario&titulo=$titulo2 class='btn btn-success btn-block'>Iniciar questionario/Candidatar</a>
         </div>
         ";
 

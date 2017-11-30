@@ -10,6 +10,13 @@ session_start();
     $sql->fetch();
     if(($sql->num_rows()) > 0){
 
+
+         $_SESSION['id'] = $id;
+        $_SESSION['login'] = $login;
+        $_SESSION['tipo'] = $tipo;
+
+        if($tipo='A'){
+
 $status = 'A';
 $sql = $mysqli->prepare('SELECT a.xp,a.level,u.id,u.tipo from aluno as a ,usuario as u where u.login = ? and u.senha = ? and ind_status = ? and a.usuario_id = u.id ');
     $sql->bind_param('sss',$_POST['login'],$_POST['senha'],$status);
@@ -19,15 +26,16 @@ $sql = $mysqli->prepare('SELECT a.xp,a.level,u.id,u.tipo from aluno as a ,usuari
     $sql->fetch();
     if(($sql->num_rows()) > 0){
         
-         $_SESSION['id'] = $id;
-        $_SESSION['login'] = $login;
-        $_SESSION['tipo'] = $tipo;
+        
         $_SESSION['xp'] = $xp;
         $_SESSION['level'] = $level;
         $_SESSION['pont_max'] = (($_SESSION['level'] * 1.5) * 150);
         $_SESSION['pont_bar'] = intval(($_SESSION['xp'] /$_SESSION['pont_max']) * 100 );
 
 
+    }
+
+}
 
 if($_SESSION['tipo'] == 'A')echo '<script>top.location.href="../buscaquiz.php";</script>';
         
@@ -39,10 +47,7 @@ elseif($_SESSION['tipo'] == 'E')echo '<script>top.location.href="../cadastravaga
 elseif($_SESSION['tipo'] == 'S')echo '<script>top.location.href="../dashboard.php";</script>';
 
 
-    }
-        
-}
-   else{
+} else{
     
 echo "<div class='alert alert-danger'>
                    Usuário ou senha incorretos, tente novamente.

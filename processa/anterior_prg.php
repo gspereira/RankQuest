@@ -81,7 +81,7 @@ for($j='1';$j<=count($array_perguntas[$_SESSION['contador']]['alternativa']);$j+
   echo "
         <div class='input-group quiz-group'>
         <span class='input-group-addon'>
-        <input type='radio' '$alt' name='resposta' value='$alt'>
+        <input type='radio' id='$alt' name='resposta' value='$alt'>
         </span>
         <textarea readonly class='form-control' name='a$j'>$alternativa</textarea>
         </div>";;  }

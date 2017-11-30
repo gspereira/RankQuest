@@ -233,10 +233,10 @@ if(!isset($_SESSION['login'])){//não está logado
       </a>
       </li>
 
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ranking">
-      <a class="nav-link" href="ranking.php">
-      <i class="fa fa-fw fa-area-chart"></i>
-      <span class="nav-link-text">Ranking</span>
+       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Minha Conta">
+      <a class="nav-link" data-toggle="tooltip" href="conta.php" data-parent="#exampleAccordion">
+      <i class="fa fa-address-card-o"></i>
+      <span class="nav-link-text">Minha conta</span>
       </a>
       </li>
 
