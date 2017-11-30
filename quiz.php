@@ -62,8 +62,8 @@ $_SESSION['array_perguntas'] = $array_perguntas;
 
   <div class="container-fluid">
     <div class="row">
-      <form>
-        <div id='resultado'  class="col-lg-10 col-sm-8 col-xs-1">
+      <form  style='width:100%'>
+        <div id='resultado'  class="col-lg-12 col-sm-12 col-xs-12">
 
          <?php     
 
@@ -71,7 +71,7 @@ $_SESSION['array_perguntas'] = $array_perguntas;
          $enunciado = $array_perguntas[$_SESSION['contador']]['enunciado'];
          $numero = $_SESSION['contador'] ;
          echo " 
-         <h5>$numero)$enunciado</h5>";?>
+         <h5>$numero)$enunciado</h5>";
          
 
          for($j='1';$j <= count($array_perguntas[$_SESSION['contador']]['alternativa']);$j++){

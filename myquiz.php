@@ -52,7 +52,7 @@ include 'navbar.php';
     <h6>$categoria/$assunto - $dificuldade</h6>
      <h6>Autor: $autor</h6>
 
-      <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Iniciar</a>
+      <a href=quiz.php?id=$id&titulo=$titulo class='btn btn-success btn-block'>Testar</a>
       <a href=ranking.php?id=$id class='btn btn-success btn-block'>Ver ranking</a>
       <a href=# class='btn btn-success btn-block'>Inativar</a>
       <a href=# class='btn btn-success btn-block'>Deletar</a>
